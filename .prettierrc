@@ -1,0 +1,37 @@
+{
+  "trailingComma": "none",
+  "printWidth": 120,
+  "tabWidth": 4,
+  "overrides": [
+    {
+      "files": "*.html",
+      "options": {
+        "tabWidth": 2
+      }
+    },
+    {
+      "files": "*.md",
+      "options": {
+        "proseWrap": "never"
+      }
+    },
+    {
+      "files": "*.json",
+      "options": {
+        "tabWidth": 2
+      }
+    },
+    {
+      "files": "*.jsonc",
+      "options": {
+        "tabWidth": 2
+      }
+    },
+    {
+      "files": "*.tson",
+      "options": {
+        "tabWidth": 2
+      }
+    }
+  ]
+}

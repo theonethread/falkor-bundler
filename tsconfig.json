@@ -1,0 +1,20 @@
+{
+  // NOTE: this config is only picked up by VSCode, actual compiler options will be overridden by falkor-bundler
+  "compilerOptions": {
+    "allowJs": true,
+    "outDir": ".dist",
+    "target": "ESNext",
+    "module": "ESNext",
+    "moduleResolution": "Node",
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "forceConsistentCasingInFileNames": true,
+    "alwaysStrict": true,
+    "noImplicitReturns": true,
+    "noImplicitAny": true,
+    "noImplicitThis": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true
+  },
+  "include": ["src/**/*"]
+}

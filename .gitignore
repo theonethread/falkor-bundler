@@ -1,0 +1,9 @@
+.DS_Store
+.localized
+.xcode
+
+.dist
+.man
+.tmp
+.log
+**/node_modules
