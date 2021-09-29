@@ -33,7 +33,7 @@
     "prepublishOnly": "npm run release && npm run man"
   },
   "devDependencies": {
-    "@types/node": "16.10.1",
+    "@types/node": "14.17.6",
     "@types/minimist": "1.2.2",
     "@types/shelljs": "0.8.9",
     "rimraf": "3.0.2"
