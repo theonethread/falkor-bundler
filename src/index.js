@@ -373,7 +373,8 @@ try {
             jscc(jsccOptions),
             // minify code in release mode
             compilationContext._RELEASE ? terser() : undefined
-        ]
+        ],
+        preserveEntrySignatures: binaryMode ? false : "strict"
     });
 
     printLog("writing javascript bundle");
