@@ -374,7 +374,7 @@ try {
             // minify code in release mode
             compilationContext._RELEASE ? terser() : undefined
         ],
-        preserveEntrySignatures: binaryMode ? false : "strict"
+        preserveEntrySignatures: moduleMode ? "strict" : false
     });
 
     printLog("writing javascript bundle");
