@@ -4,7 +4,6 @@
   "description": "ES6 TypeScript bundler to be used with the Falkor Framework",
   "author": "Barnabas Bucsy (https://github.com/theonethread)",
   "license": "MIT",
-  "private": true,
   "keywords": [
     "falkor",
     "bundler",
