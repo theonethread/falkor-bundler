@@ -4,7 +4,7 @@
 
 # NAME
 
-**falkor-bundler** - Opinionated ES6 TypeScript module bundler - part of the **Falkor Framework**
+**falkor-bundler** - Opinionated ES6 JavaScript / TypeScript module bundler - part of the **Falkor Framework**
 
 # SYNOPSIS
 
@@ -16,7 +16,7 @@ falkor-bundler (-v | --version | -h | --help)
 
 # DESCRIPTION
 
-The **falkor-bundler** project is a standalone npm command-line application written in Vanilla JavaScript to bundle ES6 NodeJS TypeScript projects (mainly to be used with the **Falkor Framework**).
+The **falkor-bundler** project is a standalone npm command-line application written in Vanilla JavaScript to bundle ES6 NodeJS JavaScript or TypeScript projects (mainly to be used with the **Falkor Framework**).
 
 The project aims to abstract away distinct build setting difficulties from developers, requiring only to follow certain predefined rules, which are necessary for the automation of:
 

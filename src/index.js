@@ -23,7 +23,7 @@ if (argv.h || argv.help) {
 version ${retrieveOwnVersion()}
 (C)2020-2021 Barnabas Bucsy - All rights reserved.
 
-Opinionated ES6 TypeScript module bundler - part of the Falkor Framework
+Opinionated ES6 JavaScript / TypeScript module bundler - part of the Falkor Framework
 
 Usage:
   falkor-bundler [--release | --debug] [--silent] [(--input <file>)] [(--out <dir>)] [(--context <ctx>)] [(-- <externals>...)]
