@@ -1,6 +1,6 @@
 # **[Falkor] Bundler**
 
-The `falkor-bundler` project is a standalone npm command-line application written in Vanilla JavaScript to bundle ES6 NodeJS TypeScript projects (mainly to be used with the **Falkor Framework**).
+The `falkor-bundler` project is a standalone npm command-line application written in Vanilla JavaScript to bundle ES6 Node.js TypeScript projects (mainly to be used with the **Falkor Framework**).
 
 The project aims to abstract away distinct build setting difficulties from developers, requiring only to follow certain predefined rules, which are necessary for the automation of:
 
@@ -115,5 +115,9 @@ To recompile the manual, make sure that [`Pandoc`](https://pandoc.org/ "Visit") 
 ```
 $ npm run man
 ```
+
+### **Open Source**
+
+You can always find the latest sources on [GitHub](https://github.com/theonethread/falkor-bundler "Visit").
 
 _©2020-2021 Barnabas Bucsy - All rights reserved._
