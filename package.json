@@ -44,7 +44,7 @@
     "strip-json-comments": "4.0.0",
     "typescript": "4.4.3",
     "tslib": "2.3.1",
-    "rollup": "2.57.0",
+    "rollup": "2.58.0",
     "builtin-modules": "3.2.0",
     "rollup-plugin-node-externals": "2.2.0",
     "@rollup/plugin-typescript": "8.2.5",
