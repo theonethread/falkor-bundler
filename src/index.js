@@ -6,6 +6,7 @@ import stripJsonComments from "strip-json-comments";
 
 //#region COMMAND LINE INTERFACE
 
+const cwd = process.cwd();
 const argv = minimist(process.argv.slice(2));
 const arrayOfStringLogJoiner = "', '";
 const retrieveOwnVersion = () =>
@@ -78,6 +79,7 @@ let outDir = ".dist";
 let jsMode = false;
 let bundleMode = "release";
 let bundleModeSet = false;
+const sharedExternals = [];
 const outerExternals = [];
 const compilationContext = {
     _DEBUG: false,
@@ -142,6 +144,7 @@ Object.keys(argv).forEach((arg) => {
             let ctx;
             try {
                 ctx = minimist(argv[arg].replace(/#/g, "--").split(/\s+/));
+                delete ctx._;
             } catch (e) {
                 printError(
                     `'context: -${arg.length > 1 ? "-" : ""}${arg}' parse error (using arguments: ${argv[arg]})`
@@ -164,7 +167,7 @@ Object.keys(argv).forEach((arg) => {
                 if (argv._[0] === "--") {
                     argv._.shift();
                 }
-                outerExternals.push(...argv._);
+                outerExternals = argv._;
             }
             break;
     }
@@ -213,9 +216,10 @@ try {
 printTask("validating package.json");
 
 let pkg;
-let binaryName;
+let moduleName;
 let moduleMode = false;
 let binaryMode = false;
+let sharedMode = false;
 const buildModes = [];
 const excludedBinaries = [];
 
@@ -242,9 +246,12 @@ if (pkg.module && pkg.module === `${outDir}/${inputName}.js`) {
     moduleMode = true;
     buildModes.push("module");
 }
+const pathReplacer = new RegExp(
+    // NOTE: replace directory tree with first directory only, since shared modules my not live in the root of the project
+    `^${outDir.replace(/^(\.\/)?([^\/]+)(.*)?/, "$1$2")}`
+);
 if (pkg.bin) {
     let binaries;
-    const pathReplacer = new RegExp(`^${outDir}`);
     const extReplacer = /\.js$/;
     if (typeof pkg.bin === "string") {
         binaries = [[pkg.name, pkg.bin]];
@@ -253,7 +260,7 @@ if (pkg.bin) {
     }
     for (const [binName, binPath] of binaries) {
         if (binPath === `${outDir}/${inputName}.js`) {
-            binaryName = binName;
+            moduleName = binName;
             binaryMode = true;
             buildModes.push("binary");
         } else {
@@ -265,9 +272,30 @@ if (pkg.bin) {
         }
     }
 }
+if (pkg.shared) {
+    let sharedModules;
+    if (typeof pkg.shared === "string") {
+        sharedModules = [pkg.shared];
+    } else {
+        sharedModules = pkg.shared;
+    }
+    sharedModules.forEach((sharedPath) => {
+        if (sharedPath === `${outDir}/${inputName}.js`) {
+            moduleName = inputName;
+            sharedMode = true;
+            buildModes.push("shared");
+        } else {
+            let sharedSource = sharedPath.replace(pathReplacer, inputDir);
+            if (!jsMode) {
+                sharedSource = sharedSource.replace(extReplacer, ".ts");
+            }
+            sharedExternals.push(sharedSource);
+        }
+    });
+}
 
-if (!moduleMode && !binaryMode) {
-    printError("nor 'binary' nor 'module' build mode could be resolved from package.json");
+if (!moduleMode && !binaryMode && !sharedMode) {
+    printError("nor 'binary' nor 'module' nor 'shared' build mode could be resolved from package.json");
     process.exit(1);
 }
 
@@ -276,11 +304,16 @@ if (!moduleMode && !binaryMode) {
 //#region PRINT SETTINGS
 
 printTask("validated settings");
-printLog(`working directory: '${process.cwd()}'`);
+printLog(`working directory: '${cwd}'`);
 printLog(`input: '${input}'${jsMode ? " (JS mode)" : ""}`);
 printLog(`out directory: '${outDir}'`);
 if (outerExternals.length) {
     printLog(`externals: '${outerExternals.join(arrayOfStringLogJoiner)}'`);
+}
+if (sharedExternals.length) {
+    printLog(`shared externals: '${sharedExternals.join(arrayOfStringLogJoiner)}'`);
+
+    sharedExternals.forEach((e) => outerExternals.push(path.join(cwd, e)));
 }
 if (excludedBinaries.length) {
     printLog(`excluded binary sources: '${excludedBinaries.join(arrayOfStringLogJoiner)}'`);
@@ -293,7 +326,7 @@ printLog(`build context: ${JSON.stringify(compilationContext, null, 2).replace(/
 
 printTask(
     `bundling ${buildModes.join(" & ")} '${pkg.name}${
-        binaryName && pkg.name !== binaryName ? ":" + binaryName : ""
+        moduleName && pkg.name !== moduleName ? ":" + moduleName : ""
     }' (${pkg.version}) in [${bundleMode}] mode`
 );
 
@@ -374,7 +407,7 @@ try {
             // minify code in release mode
             compilationContext._RELEASE ? terser() : undefined
         ],
-        preserveEntrySignatures: moduleMode ? "strict" : false
+        preserveEntrySignatures: moduleMode || sharedMode ? "strict" : false
     });
 
     printLog("writing javascript bundle");
