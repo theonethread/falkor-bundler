@@ -1,6 +1,6 @@
 # **Falkor Bundler**
 
-The `falkor-bundler` project is a standalone npm command-line application written in vanilla JavaScript to bundle ES6 Node.js JavaScript or TypeScript projects (mainly to be used with the **Falkor Framework**).
+The `falkor-bundler` project is a standalone `npm` command-line application written in vanilla JavaScript to bundle ES6 Node.js JavaScript or TypeScript projects (mainly to be used with the **Falkor Framework**).
 
 The project aims to abstract away distinct build setting difficulties from developers, requiring only to follow certain predefined rules, which are necessary for the automation of:
 
