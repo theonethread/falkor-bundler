@@ -123,7 +123,7 @@ Since `v1.1.0` it is possible to internally share modules between binaries and t
     * Either a single string input location (in this case the binary will use your input file's basename)
     * Or an object that's keys are the names of the shared modules, and their values are the input locations
 
-It is advised not to overcomplicate these setups, one should consider the whole dependency tree of all projects when doing so.
+It is advised not to over-complicate these setups, one should consider the whole dependency tree of all projects when doing so.
 
 > _For a complex setup using this technique you can check out my `falkor-auth-server` project on [GitHub](https://github.com/theonethread/falkor-auth-server "Open")._
 
