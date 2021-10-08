@@ -110,7 +110,7 @@ While developing a module, best practice is to bundle it up locally in `debug` m
 Binaries can be standalone Node.js applications, or accompanying tools for your exposed library. For binary projects `package.json` **must**:
 
 * Have a `bin` entry that is:
-    * Either a single string input location (in this case the binary will use your projects name from `package.json`)
+    * Either a single string input location (in this case the binary will use your project's name from `package.json`)
     * Or an object that's keys are the names of the binaries, and their values are the input locations
 
 > _It is a good idea to package a `man` page with standalone applications. You can check out this project's setup in [`package.json`](package.json "Open") and [`man.md`](man.md) for details._
