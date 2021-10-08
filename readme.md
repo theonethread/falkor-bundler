@@ -1,6 +1,6 @@
 # **[Falkor] Bundler**
 
-The `falkor-bundler` project is a standalone npm command-line application written in Vanilla JavaScript to bundle ES6 Node.js JavaScript or TypeScript projects (mainly to be used with the **Falkor Framework**).
+The `falkor-bundler` project is a standalone npm command-line application written in vanilla JavaScript to bundle ES6 Node.js JavaScript or TypeScript projects (mainly to be used with the **Falkor Framework**).
 
 The project aims to abstract away distinct build setting difficulties from developers, requiring only to follow certain predefined rules, which are necessary for the automation of:
 
@@ -28,7 +28,7 @@ Include the `@falkor/falkor-bundler` in the `package.json` file under `devDepend
   }
 ```
 
-_**NOTE:** And don't forget to run `npm install` afterwards_
+_**NOTE:** And don't forget to run `npm install` afterwards._
 
 ### **Command Line Interface**
 
@@ -58,7 +58,7 @@ As a dependency, one can use the command-line executable in `npm` scripts. As pa
   }
 ```
 
-_**NOTE:** `falkor-bundler` creates a `release` bundle by default, and **will not** empty the output directory before. It was designed this way to support building multiple outputs (eg. both an exported module and a command line application), so a good starter for bundling is to use [`rimraf`](https://www.npmjs.com/package/rimraf "Visit") or similar, to do the cleanup yourself._
+_**NOTE:** `falkor-bundler` creates a release bundle by default, and **will not** empty the output directory before. It was designed this way to support building multiple outputs (eg. both an exported module and a command line application), so a good starter for bundling is to use [`rimraf`](https://www.npmjs.com/package/rimraf "Visit") or similar, to do the cleanup yourself._
 
 ### **Command Line Interface**
 
@@ -95,8 +95,35 @@ The `falkor-bundler` project was mainly developed to compile ES6 `npm` packages 
 * Be valid ES modules written in strict TypeScript (or vanilla JavaScript)
 * Have `"type": "module"` entry in `package.json`
 * Have either a `"module"` or `"bin"` entry in `package.json`
-  * Have `module` entry named after `main` in module mode (default: `index.js`)
-  * Have `typings` entry named after `main` & `module` in module mode (default: `index.d.ts`)
+
+### **Required Module Structure**
+
+If a module exposes a library, that must be its main purpose, and it must be indicated in `package.json`. This does not mean, that it can not have accompanying binaries, eg. tools, boilerplate generators, etc. For a module project `package.json` **must**:
+
+* Have `module` entry named after `main` entry's base name with `js` extension (default: `index.js`)
+* Have `typings` entry named after `main` and `module` entries' base names with `d.ts` extension (default: `index.d.ts`)
+
+### **Required Binary Structure**
+
+Binaries can be standalone Node.js applications, or accompanying tools for your exposed library. For binary projects `package.json` **must**:
+
+* Have a `bin` entry that is:
+    * Either a single string input location (in this case the binary will use your projects name from `package.json`)
+    * Or an object that's keys are the names of the binaries, and their values are the input locations
+
+> _It is a good idea to package a `man` page with standalone applications. You can check out this project's setup in [`package.json`](package.json "Open") and [`man.md`](man.md) for details._
+
+### **Required Shared Structure**
+
+Since `v1.1.0` it is possible to internally share modules between binaries and the library. In this case the shared module will not get compiled into both your projects output, but will have to compile it separately. For internally shared modules `package.json` **must**:
+
+* Have a `shared` entry that is:
+    * Either a single string input location (in this case the binary will use your input file's basename)
+    * Or an object that's keys are the names of the shared modules, and their values are the input locations
+
+It is advised not to overcomplicate these setups, one should consider the whole dependency tree of all projects when doing so.
+
+> _For a complex setup using this technique you can check out my `falkor-auth-server` project on [GitHub](https://github.com/theonethread/falkor-auth-server "Open")._
 
 ### **TypeScript Configuration**
 
