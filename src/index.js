@@ -167,7 +167,7 @@ Object.keys(argv).forEach((arg) => {
                 if (argv._[0] === "--") {
                     argv._.shift();
                 }
-                outerExternals = argv._;
+                outerExternals.push(...argv._);
             }
             break;
     }
