@@ -246,10 +246,9 @@ if (pkg.module && pkg.module === `${outDir}/${inputName}.js`) {
     moduleMode = true;
     buildModes.push("module");
 }
-const pathReplacer = new RegExp(
-    // NOTE: replace directory tree with first directory only, since shared modules my not live in the root of the project
-    `^${outDir.replace(/^(\.\/)?([^\/]+)(.*)?/, "$1$2")}`
-);
+// NOTE: replace directory tree with first directory only, since shared modules my not live in the root of the project
+const pathReplacer = new RegExp(`^${outDir.replace(/^(\.\/)?([^\/]+)(.*)?/, "$1$2")}`);
+const replaceDir = inputDir.replace(/^(\.\/)?([^\/]+)(.*)?/, "$1$2");
 if (pkg.bin) {
     let binaries;
     const extReplacer = /\.js$/;
@@ -264,7 +263,7 @@ if (pkg.bin) {
             binaryMode = true;
             buildModes.push("binary");
         } else {
-            let binarySource = binPath.replace(pathReplacer, inputDir);
+            let binarySource = binPath.replace(pathReplacer, replaceDir);
             if (!jsMode) {
                 binarySource = binarySource.replace(extReplacer, ".ts");
             }
@@ -285,7 +284,7 @@ if (pkg.shared) {
             sharedMode = true;
             buildModes.push("shared");
         } else {
-            let sharedSource = sharedPath.replace(pathReplacer, inputDir);
+            let sharedSource = sharedPath.replace(pathReplacer, replaceDir);
             if (!jsMode) {
                 sharedSource = sharedSource.replace(extReplacer, ".ts");
             }
@@ -394,6 +393,7 @@ try {
 
     const sourceBundle = await rollup({
         input,
+        preserveEntrySignatures: moduleMode || sharedMode ? "strict" : false,
         external: outerExternals.length ? outerExternals : undefined,
         plugins: [
             externals(externalsOptions),
@@ -406,8 +406,7 @@ try {
             jscc(jsccOptions),
             // minify code in release mode
             compilationContext._RELEASE ? terser() : undefined
-        ],
-        preserveEntrySignatures: moduleMode || sharedMode ? "strict" : false
+        ]
     });
 
     printLog("writing javascript bundle");
