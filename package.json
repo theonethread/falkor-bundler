@@ -1,19 +1,18 @@
 {
   "name": "@falkor/falkor-bundler",
   "version": "1.1.0",
-  "description": "ES6 TypeScript bundler to be used with the Falkor Framework",
+  "description": "ES6 JavaScript / TypeScript bundler to be used with the Falkor Framework",
   "author": "Barnabas Bucsy (https://github.com/theonethread)",
   "contributors": [
     "Barnabas Bucsy (https://github.com/theonethread)"
   ],
-  "funding": "https://www.linkedin.com/in/barnabas-bucsy",
   "license": "MIT",
-  "private": true,
   "repository": "github:theonethread/falkor-bundler",
   "keywords": [
     "falkor",
     "bundler",
     "ES6",
+    "build",
     "library",
     "lib",
     "binary",
