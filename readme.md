@@ -140,7 +140,7 @@ $ npm install
 $ npm run [ debug | release ]
 ```
 
-This will use the project's raw JavaScript sources to create a distribution from itself. :sunglasses:
+This will use the project's raw JavaScript source to create a distribution from itself. :sunglasses:
 
 ### **Man Page**
 
