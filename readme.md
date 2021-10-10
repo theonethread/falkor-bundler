@@ -152,6 +152,17 @@ To recompile the manual, make sure that [`Pandoc`](https://pandoc.org/ "Visit") 
 $ npm run man
 ```
 
+### **Version History**
+
+* `development`
+    * [GitHub](https://github.com/theonethread/falkor-bundler "Visit")
+* `v1.1.0`
+    * [npmjs](https://www.npmjs.com/package/@falkor/falkor-bundler/v/1.1.0 "Visit")
+    * [GitHub](https://github.com/theonethread/falkor-bundler/tree/v1.1.0 "Visit")
+* `v1.0.0`
+    * [npmjs](https://www.npmjs.com/package/@falkor/falkor-bundler/v/1.0.0 "Visit")
+    * [GitHub](https://github.com/theonethread/falkor-bundler/tree/v1.0.0 "Visit")
+
 ### **Open Source**
 
 You can always find the latest sources on [GitHub](https://github.com/theonethread/falkor-bundler "Visit").
