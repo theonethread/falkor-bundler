@@ -24,7 +24,7 @@ Include the `@falkor/falkor-bundler` in the `package.json` file under `devDepend
 ...
   "devDependencies": {
     ...
-    "@falkor/falkor-bundler": "1.0.0"
+    "@falkor/falkor-bundler": "1.1.0"
   }
 ```
 
@@ -113,7 +113,7 @@ Binaries can be standalone Node.js applications, or accompanying tools for your 
     * Either a single string input location (in this case the binary will use your project's name from `package.json`)
     * Or an object that's keys are the names of the binaries, and their values are the input locations
 
-> _It is a good idea to package a `man` page with standalone applications. You can check out this project's setup in [`package.json`](package.json "Open") and [`man.md`](man.md) for details._
+> _It is a good idea to package a `man` page with standalone applications. You can check out this project's setup in [`package.json`](https://github.com/theonethread/falkor-bundler/blob/master/package.json "Open") and [`man.md`](https://github.com/theonethread/falkor-bundler/blob/master/man.md "Open") for details._
 
 ### **Required Shared Structure**
 
@@ -125,7 +125,7 @@ Since `v1.1.0` it is possible to internally share modules between binaries and t
 
 It is advised not to over-complicate these setups, one should consider the whole dependency tree of all projects when doing so.
 
-> _For a complex setup using this technique you can check out my `falkor-auth-server` project on [GitHub](https://github.com/theonethread/falkor-auth-server "Open")._
+> _For a complex setup using this technique you can check out my `falkor-auth-server` project on [GitHub](https://github.com/theonethread/falkor-auth-server "Visit")._
 
 ### **TypeScript Configuration**
 
@@ -144,7 +144,7 @@ This will use the project's raw JavaScript source to create a distribution from 
 
 ### **Man Page**
 
-By default the `falkor-bundler` module ships with a pre-compiled man page when installed on Unix-like operating systems. The manual was created by converting the file [`man/man.md`](man/man.md "Open").
+By default the `falkor-bundler` module ships with a pre-compiled man page when installed on Unix-like operating systems. The manual was created by converting the file [`man/man.md`](https://github.com/theonethread/falkor-bundler/blob/master/man/man.md "Open").
 
 To recompile the manual, make sure that [`Pandoc`](https://pandoc.org/ "Visit") is installed, and present in the `PATH`, then run:
 
@@ -155,5 +155,9 @@ $ npm run man
 ### **Open Source**
 
 You can always find the latest sources on [GitHub](https://github.com/theonethread/falkor-bundler "Visit").
+
+### **License**
+
+[MIT](https://github.com/theonethread/falkor-bundler/blob/master/license.txt "Open")
 
 _©2020-2021 Barnabas Bucsy - All rights reserved._
