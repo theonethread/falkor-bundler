@@ -156,6 +156,9 @@ $ npm run man
 
 * `development`
     * [GitHub](https://github.com/theonethread/falkor-bundler "Visit")
+* `v1.1.1`
+    * [npmjs](https://www.npmjs.com/package/@falkor/falkor-bundler/v/1.1.1 "Visit")
+    * [GitHub](https://github.com/theonethread/falkor-bundler/releases/tag/v1.1.1 "Visit")
 * `v1.1.0`
     * [npmjs](https://www.npmjs.com/package/@falkor/falkor-bundler/v/1.1.0 "Visit")
     * [GitHub](https://github.com/theonethread/falkor-bundler/releases/tag/v1.1.0 "Visit")
