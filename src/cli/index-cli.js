@@ -1,14 +1,14 @@
-import version from "./version.js";
+import getOwnVersion from "./version.js";
 
 export default (short = false) => {
     if (short) {
-        console.log("falkor-bundler version", version());
+        console.log("falkor-bundler version", getOwnVersion());
         return;
     }
 
     console.log(`
 [Falkor Bundler]
-version ${version()}
+version ${getOwnVersion()}
 (C)2020-2021 Barnabas Bucsy - All rights reserved.
 
 Opinionated ES6 JavaScript / TypeScript module bundler - part of the Falkor Framework

@@ -1,6 +1,6 @@
 % FALKOR-BUNDLER(1) The Falkor Framework **1.0.0** | **Falkor** General Commands Manual
 % Barnabas Bucsy
-% June 2021
+% October 2021
 
 # NAME
 
