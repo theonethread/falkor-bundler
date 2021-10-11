@@ -1,20 +1,14 @@
-import path from "path";
-import { fileURLToPath } from "url";
-import shell from "shelljs";
-
-const retrieveOwnVersion = () =>
-    // NOTE: can't use __dirname in es module
-    JSON.parse(shell.cat(path.join(path.dirname(fileURLToPath(import.meta.url)), "../../package.json"))).version;
+import version from "./version.js";
 
 export default (short = false) => {
     if (short) {
-        console.log("falkor-bundler version", retrieveOwnVersion());
+        console.log("falkor-bundler version", version());
         return;
     }
 
     console.log(`
 [Falkor Bundler]
-version ${retrieveOwnVersion()}
+version ${version()}
 (C)2020-2021 Barnabas Bucsy - All rights reserved.
 
 Opinionated ES6 JavaScript / TypeScript module bundler - part of the Falkor Framework
