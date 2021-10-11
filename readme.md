@@ -120,8 +120,8 @@ Binaries can be standalone Node.js applications, or accompanying tools for your 
 Since `v1.1.0` it is possible to internally share modules between binaries and the library. In this case the shared module will not get compiled into both your projects output, but will have to compile it separately. For internally shared modules `package.json` **must**:
 
 * Have a `shared` entry that is:
-    * Either a single string input location (in this case the binary will use your input file's basename)
-    * Or an object that's keys are the names of the shared modules, and their values are the input locations
+    * Either a single string input location
+    * Or an array of string input locations
 
 It is advised not to over-complicate these setups, one should consider the whole dependency tree of all projects when doing so.
 

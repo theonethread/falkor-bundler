@@ -6,11 +6,11 @@ import stripJsonComments from "strip-json-comments";
 //#region COMMAND LINE INTERFACE
 const argv = minimist(process.argv.slice(2));
 if (argv.v || argv.version) {
-    (await import("./index-cli.js")).default(true);
+    (await import("./cli/index-cli.js")).default(true);
     process.exit(0);
 }
 if (argv.h || argv.help) {
-    (await import("./index-cli.js")).default();
+    (await import("./cli/index-cli.js")).default();
     process.exit(0);
 }
 
