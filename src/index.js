@@ -4,6 +4,7 @@ import shell from "shelljs";
 import stripJsonComments from "strip-json-comments";
 
 //#region COMMAND LINE INTERFACE
+
 const argv = minimist(process.argv.slice(2));
 if (argv.v || argv.version) {
     (await import("./cli/index-cli.js")).default(true);
