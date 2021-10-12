@@ -2,6 +2,7 @@
 .localized
 
 .dist
+.doc
 .man
 .tmp
 .log
