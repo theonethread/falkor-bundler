@@ -34,7 +34,7 @@
   "scripts": {
     "debug": "rimraf .dist/**/* && node src/index.js --debug --input src/index.js && node src/index.js --debug --input src/cli/version.js --out .dist/cli",
     "release": "rimraf .dist/**/* && node src/index.js --release --input src/index.js && node src/index.js --release --input src/cli/version.js --out .dist/cli",
-    "man": "pandoc --version && (mkdir .man || echo Nothing to do.) && rimraf .man/**/* && pandoc --standalone --to man ./man/man.md --output ./.man/falkor-bundler.1",
+    "man": "pandoc --version && (mkdir .man || rimraf .man/**/*) && pandoc --standalone --to man ./man/man.md --output ./.man/falkor-bundler.1",
     "prepublishOnly": "npm run release && npm run man"
   },
   "devDependencies": {
