@@ -24,7 +24,7 @@ Include the `@falkor/falkor-bundler` in the `package.json` file under `devDepend
 ...
   "devDependencies": {
     ...
-    "@falkor/falkor-bundler": "1.1.2"
+    "@falkor/falkor-bundler": "1.1.3"
   }
 ```
 
@@ -156,6 +156,9 @@ $ npm run man
 
 * `development`
     * [GitHub](https://github.com/theonethread/falkor-bundler "Visit")
+* `v1.1.3`
+    * [npmjs](https://www.npmjs.com/package/@falkor/falkor-bundler/v/1.1.3 "Visit")
+    * [GitHub](https://github.com/theonethread/falkor-bundler/releases/tag/v1.1.3 "Visit")
 * `v1.1.2`
     * [npmjs](https://www.npmjs.com/package/@falkor/falkor-bundler/v/1.1.2 "Visit")
     * [GitHub](https://github.com/theonethread/falkor-bundler/releases/tag/v1.1.2 "Visit")
