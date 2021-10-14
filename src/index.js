@@ -346,7 +346,8 @@ const typescriptOptions = {
 const jsccOptions = {
     values: compilationContext,
     sourcemap: compilationContext._DEBUG,
-    mapContent: false
+    mapContent: false,
+    asloader: false
 };
 
 const outputOptions = {
