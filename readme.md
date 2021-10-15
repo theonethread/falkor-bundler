@@ -1,6 +1,6 @@
 # **Falkor Bundler**
 
-[![Vulnerabilities](https://snyk.io/test/github/theonethread/falkor-bundler/badge.svg)](https://snyk.io/test/github/theonethread/falkor-bundler)
+[![Vulnerabilities](https://snyk.io/test/github/theonethread/falkor-bundler/badge.svg "snyk")](https://snyk.io/test/github/theonethread/falkor-bundler "Visit")
 
 The `falkor-bundler` project is a standalone `npm` command-line application written in vanilla JavaScript to bundle ES6 Node.js JavaScript or TypeScript projects (mainly to be used with the **Falkor Framework**).
 
