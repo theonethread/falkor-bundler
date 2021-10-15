@@ -3,6 +3,8 @@
 [![Npm Keywords](https://img.shields.io/github/package-json/keywords/theonethread/falkor-bundler "Keywords")](https://www.npmjs.com/package/@falkor/falkor-bundler "Visit") &nbsp;
 [![Npm Package](https://img.shields.io/npm/v/@falkor/falkor-bundler "Npm")](https://www.npmjs.com/package/@falkor/falkor-bundler "Visit") &nbsp;
 [![Node Version](https://img.shields.io/node/v/@falkor/falkor-bundler "Node")](https://nodejs.org/ "Visit") &nbsp;
+[![Rollup](https://img.shields.io/npm/dependency-version/@falkor/falkor-auth-server/dev/rollup "Rollup")](https://www.npmjs.com/package/rollup "Visit") &nbsp;
+[![TypeScript](https://img.shields.io/npm/dependency-version/@falkor/falkor-auth-server/dev/typescript "TypeScript")](https://www.npmjs.com/package/typescript "Visit") &nbsp;
 [![Snyk Vulnerabilities](https://img.shields.io/snyk/vulnerabilities/github/theonethread/falkor-bundler "Snyk")](https://snyk.io/test/github/theonethread/falkor-bundler "Visit") &nbsp;
 [![License](https://img.shields.io/npm/l/@falkor/falkor-bundler "MIT")](https://github.com/theonethread/falkor-bundler/blob/master/license.txt "Visit")
 
