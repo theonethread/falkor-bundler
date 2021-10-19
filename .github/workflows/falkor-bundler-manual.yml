@@ -64,5 +64,6 @@ jobs:
           falkor-bundler --help
 
       - name: Get Executable Manual
+        if: ${{ matrix.os != 'windows-latest' }}
         run: |-
           man falkor-bundler | col -bx
