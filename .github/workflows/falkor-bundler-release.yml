@@ -1,4 +1,4 @@
-name: Falkor CI - Master
+name: Falkor CI - Release
 
 on:
   push:
@@ -9,8 +9,8 @@ on:
       - master
 
 jobs:
-  CIm:
-    name: Master CI Suite
+  CIr:
+    name: Release CI Suite
 
     strategy:
       matrix:

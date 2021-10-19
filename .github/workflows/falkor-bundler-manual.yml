@@ -1,0 +1,59 @@
+name: Falkor CI - Manual
+
+on:
+  workflow_dispatch:
+    inputs:
+      cli:
+        description: "CLI arguments for build"
+        required: false
+        default: ""
+
+jobs:
+  CIm:
+    name: Manual CI Suite
+
+    strategy:
+      matrix:
+        node-version: [14.x, 16.x]
+        os: [ubuntu-latest, windows-latest, macOS-latest]
+
+    runs-on: ${{ matrix.os }}
+
+    steps:
+      - name: Git Checkout
+        uses: actions/checkout@v2
+
+      - name: Use Node.js v${{ matrix.node-version }}
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: npm
+
+      - name: Use Pandoc v2.14.2
+        uses: r-lib/actions/setup-pandoc@v1
+        with:
+          pandoc-version: "2.14.2"
+
+      - name: Install Npm Dependencies
+        run: |-
+          npm ci --ignore-scripts
+
+      - name: Bundle Custom Project
+        run: |-
+          node src/index.js ${{ github.event.inputs.cli }}
+
+      - name: Build Manual
+        run: |-
+          npm run man
+
+      - name: Install Project Globally
+        run: |-
+          npm install --global .
+
+      - name: Get Executable Version
+        run: |-
+          falkor-bundler --version
+
+      - name: Get Executable Hep
+        run: |-
+          falkor-bundler --help
