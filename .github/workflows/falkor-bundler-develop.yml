@@ -1,0 +1,54 @@
+name: Falkor CI - Develop
+
+on:
+  schedule:
+    - cron: "40 3 * * *" # 3:40am UTC
+
+jobs:
+  CI:
+    name: Develop CI Suite
+
+    strategy:
+      matrix:
+        node-version: [14.x, 16.x]
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Git Checkout
+        uses: actions/checkout@v2
+
+      - name: Use Node.js v${{ matrix.node-version }}
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: npm
+
+      - name: Use Pandoc v2.14.2
+        uses: r-lib/actions/setup-pandoc@v1
+        with:
+          pandoc-version: "2.14.2"
+
+      - name: Install Npm Dependencies
+        run: |-
+          npm ci --ignore-scripts
+
+      - name: Bundle Project
+        run: |-
+          npm run release
+
+      - name: Build Manual
+        run: |-
+          npm run man
+
+      - name: Install Project Globally
+        run: |-
+          npm install --global .
+
+      - name: Get Executable Version
+        run: |-
+          falkor-bundler --version
+
+      - name: Get Executable Hep
+        run: |-
+          falkor-bundler --help

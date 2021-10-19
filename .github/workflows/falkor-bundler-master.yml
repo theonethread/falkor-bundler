@@ -1,27 +1,27 @@
-name: Falkor CI
+name: Falkor CI - Master
 
 on:
   push:
     branches:
-      - feature/github-actions
+      - master
   pull_request:
     branches:
-      - feature/github-actions
+      - master
 
 jobs:
   CI:
-    runs-on: ubuntu-latest
-    name: CI Suite
+    name: Master CI Suite
 
     strategy:
       matrix:
         node-version: [14.x, 16.x]
+        os: [ubuntu-latest, windows-latest, macOS-latest]
+
+    runs-on: ${{ matrix.os }}
 
     steps:
-      - uses: actions/checkout@v2
-      - uses: r-lib/actions/setup-pandoc@v1
-        with:
-          pandoc-version: "2.14.2"
+      - name: Git Checkout
+        uses: actions/checkout@v2
 
       - name: Use Node.js v${{ matrix.node-version }}
         uses: actions/setup-node@v2
@@ -29,7 +29,12 @@ jobs:
           node-version: ${{ matrix.node-version }}
           cache: npm
 
-      - name: Install Dependencies
+      - name: Use Pandoc v2.14.2
+        uses: r-lib/actions/setup-pandoc@v1
+        with:
+          pandoc-version: "2.14.2"
+
+      - name: Install Npm Dependencies
         run: |-
           npm ci --ignore-scripts
 
@@ -41,14 +46,14 @@ jobs:
         run: |-
           npm run man
 
-      - name: Install Globally
+      - name: Install Project Globally
         run: |-
           npm install --global .
 
-      - name: Get Version
+      - name: Get Executable Version
         run: |-
           falkor-bundler --version
 
-      - name: Get Hep
+      - name: Get Executable Hep
         run: |-
           falkor-bundler --help
