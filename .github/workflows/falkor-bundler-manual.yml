@@ -4,9 +4,9 @@ on:
   workflow_dispatch:
     inputs:
       cli:
-        description: "CLI arguments for build"
+        description: Custom CLI arguments for build
         required: false
-        default: ""
+        default: --release
 
 jobs:
   CIm:
@@ -40,7 +40,8 @@ jobs:
 
       - name: Bundle Custom Project
         run: |-
-          node src/index.js ${{ github.event.inputs.cli }}
+          node src/index.js ${{ github.event.inputs.cli }} --input src/index.js
+          node src/index.js ${{ github.event.inputs.cli }} --input src/cli/version.js --out .dist/cli
 
       - name: Build Manual
         run: |-
