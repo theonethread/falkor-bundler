@@ -52,7 +52,3 @@ jobs:
       - name: Get Hep
         run: |-
           falkor-bundler --help
-
-      - name: Get Funding
-        run: |-
-          npm fund --global @falkor/falkor-bundler
