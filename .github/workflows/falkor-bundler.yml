@@ -1,0 +1,38 @@
+name: Falkor CI
+
+on:
+  push:
+    branches:
+      - feature/github-actions
+  pull_request:
+    branches:
+      - feature/github-actions
+
+jobs:
+  CI:
+    runs-on: ubuntu-latest
+    name: CI Suite
+
+    strategy:
+      matrix:
+        node-version: [14.x, 16.x]
+
+    steps:
+      - uses: actions/checkout@v2
+      - uses: r-lib/actions/setup-pandoc@v1
+        with:
+          pandoc-version: "2.14.2"
+
+      - name: Use Node.js v${{ matrix.node-version }}
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: npm
+
+      - name: Install Dependencies
+        run: |-
+          npm ci --ignore-scripts
+
+      - name: Bundle project
+        run: |-
+          npm run prepublishOnly
