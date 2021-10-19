@@ -22,7 +22,7 @@ jobs:
     runs-on: ${{ matrix.os }}
 
     steps:
-      - name: Git Checkout
+      - name: GitHub Checkout
         uses: actions/checkout@v2
 
       - name: Use Node.js v${{ matrix.node-version }}
