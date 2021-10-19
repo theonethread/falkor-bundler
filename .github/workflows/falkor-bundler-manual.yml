@@ -32,6 +32,7 @@ jobs:
           cache: npm
 
       - name: Use Pandoc v2.14.2
+        if: ${{ matrix.os != 'windows-latest' }}
         uses: r-lib/actions/setup-pandoc@v1
         with:
           pandoc-version: "2.14.2"
@@ -46,6 +47,7 @@ jobs:
           node src/index.js ${{ github.event.inputs.cli }} --input src/cli/version.js --out .dist/cli
 
       - name: Build Manual
+        if: ${{ matrix.os != 'windows-latest' }}
         run: |-
           npm run man
 
