@@ -9,7 +9,7 @@ on:
       - master
 
 jobs:
-  CI:
+  CIm:
     name: Master CI Suite
 
     strategy:
