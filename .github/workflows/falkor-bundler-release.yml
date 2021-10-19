@@ -61,3 +61,7 @@ jobs:
       - name: Get Executable Hep
         run: |-
           falkor-bundler --help
+
+      - name: Get Executable Manual
+        run: |-
+          man falkor-bundler | col -bx
