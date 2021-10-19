@@ -33,6 +33,10 @@ jobs:
         run: |-
           npm ci --ignore-scripts
 
-      - name: Bundle project
+      - name: Bundle Project
         run: |-
-          npm run prepublishOnly
+          npm run release
+
+      - name: Build Manual
+        run: |-
+          npm run man
