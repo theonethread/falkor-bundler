@@ -40,3 +40,15 @@ jobs:
       - name: Build Manual
         run: |-
           npm run man
+
+      - name: Install Globally
+        run: |-
+          npm install --global .
+
+      - name: Get Version
+        run: |-
+          falkor-bundler --version
+
+      - name: Get Hep
+        run: |-
+          falkor-bundler --help
