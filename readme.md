@@ -3,7 +3,7 @@
 [![Npm Keywords](https://img.shields.io/github/package-json/keywords/theonethread/falkor-bundler "Keywords")](https://www.npmjs.com/package/@falkor/falkor-bundler "Visit") &nbsp;
 [![Npm Package](https://img.shields.io/npm/v/@falkor/falkor-bundler "Npm")](https://www.npmjs.com/package/@falkor/falkor-bundler "Visit") &nbsp;
 [![Node Version](https://img.shields.io/node/v/@falkor/falkor-bundler "Node")](https://nodejs.org/ "Visit") &nbsp;
-[![CI](https://img.shields.io/github/workflow/status/theonethread/falkor-bundler/Falkor%20CI%20-%20Manual "CI")](https://github.com/theonethread/falkor-bundler/actions "Visit") &nbsp;
+[![CI](https://img.shields.io/github/workflow/status/theonethread/falkor-bundler/Falkor%20CI%20-%20Develop "CI")](https://github.com/theonethread/falkor-bundler/actions "Visit") &nbsp;
 [![Activity](https://img.shields.io/github/last-commit/theonethread/falkor-bundler "Activity")](https://github.com/theonethread/falkor-bundler "Visit") &nbsp;
 [![Rollup](https://img.shields.io/npm/dependency-version/@falkor/falkor-bundler/rollup "Rollup")](https://www.npmjs.com/package/rollup "Visit") &nbsp;
 [![TypeScript](https://img.shields.io/npm/dependency-version/@falkor/falkor-bundler/typescript "TypeScript")](https://www.npmjs.com/package/typescript "Visit") &nbsp;
