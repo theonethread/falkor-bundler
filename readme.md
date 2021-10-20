@@ -162,29 +162,23 @@ To recompile the manual, make sure that [`Pandoc`](https://pandoc.org/ "Visit") 
 $ npm run man
 ```
 
-### **Version History**
+### **Versioning and Branching Strategy**
 
-* `development`
-    * [GitHub](https://github.com/theonethread/falkor-bundler "Visit")
-* `v1.1.3`
-    * [npmjs](https://www.npmjs.com/package/@falkor/falkor-bundler/v/1.1.3 "Visit")
-    * [GitHub](https://github.com/theonethread/falkor-bundler/releases/tag/v1.1.3 "Visit")
-* `v1.1.2`
-    * [npmjs](https://www.npmjs.com/package/@falkor/falkor-bundler/v/1.1.2 "Visit")
-    * [GitHub](https://github.com/theonethread/falkor-bundler/releases/tag/v1.1.2 "Visit")
-* `v1.1.1`
-    * [npmjs](https://www.npmjs.com/package/@falkor/falkor-bundler/v/1.1.1 "Visit")
-    * [GitHub](https://github.com/theonethread/falkor-bundler/releases/tag/v1.1.1 "Visit")
-* `v1.1.0`
-    * [npmjs](https://www.npmjs.com/package/@falkor/falkor-bundler/v/1.1.0 "Visit")
-    * [GitHub](https://github.com/theonethread/falkor-bundler/releases/tag/v1.1.0 "Visit")
-* `v1.0.0`
-    * [npmjs](https://www.npmjs.com/package/@falkor/falkor-bundler/v/1.0.0 "Visit")
-    * [GitHub](https://github.com/theonethread/falkor-bundler/releases/tag/v1.0.0 "Visit")
+Release sources can be found on the `master` branch, this one always points to the latest tagged release. Previous sources of releases' can be found using Git version tags (or browsing GitHub releases). Released packages can be found on [npmjs](https://www.npmjs.com/package/@falkor/falkor-bundler "Visit").
+
+The repository's main branch is `develop` (due to technical reasons), this holds all developments that are already decided to be included in the next release. Usually this branch is ahead of master one patch version (but based on upcoming features to include this can become minor, or major), so prepared external links may yet be broken.
+
+The `feature/*` branches usually hold ideas and POC code, these will only be merged into `develop` once their impact measured and quality meets release requirements.
+
+> _The project uses [SemVer](https://semver.org "Visit"), Git tags are prefixed with a `v` character._
+
+### **GitHub Actions**
+
+Automatic builds are achieved via GitHub actions, CI will make nightly builds of the `develop` branch (using Ubuntu image), and thoroughly test `master` when there is a pull request, or commit on it (using Ubuntu - Win - MacOS image matrix). The workflows can be found [here](https://github.com/theonethread/falkor-bundler/blob/develop/.github/workflows "Open").
 
 ### **Open Source**
 
-You can always find the latest sources on [GitHub](https://github.com/theonethread/falkor-bundler "Visit").
+The latest sources can always be found on [GitHub](https://github.com/theonethread/falkor-bundler "Visit").
 
 ### **License**
 
