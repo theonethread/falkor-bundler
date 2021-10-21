@@ -20,6 +20,9 @@ jobs:
       security-events: write
 
     steps:
+      - name: GitHub Checkout
+        uses: actions/checkout@v2
+
       - name: Use CodeQL v1
         uses: github/codeql-action/init@v1
         with:
