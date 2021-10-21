@@ -1,6 +1,13 @@
 name: Falkor CI - Security
 
-on: workflow_dispatch
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
 
 jobs:
   CIs:
@@ -17,6 +24,11 @@ jobs:
       - name: GitHub Checkout
         uses: actions/checkout@v2
 
+      - name: Analyse Project Dependencies
+        uses: snyk/actions/node@master
+        env:
+          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+
       - name: Use CodeQL v1
         uses: github/codeql-action/init@v1
         with:
@@ -24,8 +36,3 @@ jobs:
 
       - name: Analyse Project Sources
         uses: github/codeql-action/analyze@v1
-
-      - name: Analyse Project Dependencies
-        uses: snyk/actions/node@master
-        env:
-          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
