@@ -24,19 +24,19 @@ jobs:
           node-version: 14.x
           cache: npm
 
-      - name: Initialize CodeQL
+      - name: Use CodeQL v1
         uses: github/codeql-action/init@v1
         with:
           languages: javascript
 
-      - name: Install Npm Dependencies
-        run: |-
-          npm ci --ignore-scripts
+      # - name: Install Npm Dependencies
+      #   run: |-
+      #     npm ci --ignore-scripts
 
-      - name: Bundle Custom Project
-        run: |-
-          node src/index.js ${{ github.event.inputs.cli }} --input src/index.js
-          node src/index.js ${{ github.event.inputs.cli }} --input src/cli/version.js --out .dist/cli
+      # - name: Bundle Custom Project
+      #   run: |-
+      #     node src/index.js ${{ github.event.inputs.cli }} --input src/index.js
+      #     node src/index.js ${{ github.event.inputs.cli }} --input src/cli/version.js --out .dist/cli
 
       - name: Analyse Project
         uses: github/codeql-action/analyze@v1
