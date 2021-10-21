@@ -1,12 +1,6 @@
 name: Falkor CI - Security
 
-on:
-  workflow_dispatch:
-    inputs:
-      cli:
-        description: Custom CLI arguments for build
-        required: false
-        default: --release
+on: workflow_dispatch
 
 jobs:
   CIs:
