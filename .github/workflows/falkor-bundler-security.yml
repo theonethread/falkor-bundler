@@ -9,7 +9,7 @@ on:
         default: --release
 
 jobs:
-  CId:
+  CIs:
     name: Security CI Suite
 
     runs-on: ubuntu-latest
@@ -28,5 +28,10 @@ jobs:
         with:
           languages: javascript
 
-      - name: Analyse Project
+      - name: Analyse Project Sources
         uses: github/codeql-action/analyze@v1
+
+      # - name: Analyse Project Dependencies
+      #   uses: snyk/actions/node@master
+      #   env:
+      #     SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
