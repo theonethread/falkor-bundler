@@ -31,13 +31,17 @@
   ],
   "type": "module",
   "main": ".dist/index.js",
-  "bin": ".dist/index.js",
+  "bin": {
+    "falkor-bundler": ".dist/index.js"
+  },
   "shared": ".dist/cli/version.js",
   "files": [
     ".dist",
     ".man"
   ],
-  "man": ".man/falkor-bundler.1",
+  "man": [
+    ".man/falkor-bundler.1"
+  ],
   "engines": {
     "node": ">=14",
     "npm": ">=6"
