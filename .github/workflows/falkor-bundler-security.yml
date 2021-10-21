@@ -31,7 +31,7 @@ jobs:
       - name: Analyse Project Sources
         uses: github/codeql-action/analyze@v1
 
-      # - name: Analyse Project Dependencies
-      #   uses: snyk/actions/node@master
-      #   env:
-      #     SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+      - name: Analyse Project Dependencies
+        uses: snyk/actions/node@master
+        env:
+          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
