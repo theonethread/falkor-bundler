@@ -34,7 +34,7 @@ Include the `@falkor/falkor-bundler` in the `package.json` file under `devDepend
 ...
   "devDependencies": {
     ...
-    "@falkor/falkor-bundler": "1.1.3"
+    "@falkor/falkor-bundler": "1.1.4"
   }
 ```
 
