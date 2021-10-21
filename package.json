@@ -1,13 +1,24 @@
 {
   "name": "@falkor/falkor-bundler",
-  "version": "1.1.2",
+  "version": "1.1.3",
   "description": "ES6 JavaScript / TypeScript bundler to be used with the Falkor Framework",
-  "author": "Barnabas Bucsy (https://github.com/theonethread)",
+  "author": {
+    "name": "Barnabas Bucsy",
+    "url": "https://github.com/theonethread"
+  },
   "contributors": [
-    "Barnabas Bucsy (https://github.com/theonethread)"
+    {
+      "name": "Barnabas Bucsy",
+      "url": "https://github.com/theonethread"
+    }
   ],
   "license": "MIT",
   "repository": "github:theonethread/falkor-bundler",
+  "homepage": "https://falkor.world/",
+  "funding": {
+    "type": "individual",
+    "url": "https://www.linkedin.com/in/barnabas-bucsy"
+  },
   "keywords": [
     "falkor",
     "bundler",
@@ -20,13 +31,17 @@
   ],
   "type": "module",
   "main": ".dist/index.js",
-  "bin": ".dist/index.js",
+  "bin": {
+    "falkor-bundler": ".dist/index.js"
+  },
   "shared": ".dist/cli/version.js",
   "files": [
     ".dist",
     ".man"
   ],
-  "man": ".man/falkor-bundler.1",
+  "man": [
+    ".man/falkor-bundler.1"
+  ],
   "engines": {
     "node": ">=14",
     "npm": ">=6"
@@ -38,7 +53,7 @@
     "prepublishOnly": "npm run release && npm run man"
   },
   "devDependencies": {
-    "@types/node": "14.17.21",
+    "@types/node": "14.17.27",
     "@types/minimist": "1.2.2",
     "@types/shelljs": "0.8.9",
     "rimraf": "3.0.2"
@@ -52,7 +67,7 @@
     "rollup": "2.58.0",
     "builtin-modules": "3.2.0",
     "rollup-plugin-node-externals": "2.2.0",
-    "@rollup/plugin-typescript": "8.2.5",
+    "@rollup/plugin-typescript": "8.3.0",
     "rollup-plugin-jscc": "2.0.0",
     "rollup-plugin-terser": "7.0.2",
     "rollup-plugin-dts": "4.0.0"

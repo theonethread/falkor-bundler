@@ -1,0 +1,66 @@
+name: Falkor CI - Release
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  CIr:
+    name: Release CI Suite
+
+    strategy:
+      matrix:
+        node-version: [14.x, 16.x]
+        os: [ubuntu-latest, windows-latest, macOS-latest]
+
+    runs-on: ${{ matrix.os }}
+
+    steps:
+      - name: GitHub Checkout
+        uses: actions/checkout@v2
+
+      - name: Use Node.js v${{ matrix.node-version }}
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: npm
+
+      - name: Use Pandoc v2.14.2
+        if: ${{ matrix.os != 'windows-latest' }}
+        uses: r-lib/actions/setup-pandoc@v1
+        with:
+          pandoc-version: "2.14.2"
+
+      - name: Install Npm Dependencies
+        run: |-
+          npm ci --ignore-scripts
+
+      - name: Bundle Project
+        run: |-
+          npm run release
+
+      - name: Build Manual
+        if: ${{ matrix.os != 'windows-latest' }}
+        run: |-
+          npm run man
+
+      - name: Install Project Globally
+        run: |-
+          npm install --global .
+
+      - name: Get Executable Version
+        run: |-
+          falkor-bundler --version
+
+      - name: Get Executable Hep
+        run: |-
+          falkor-bundler --help
+
+      - name: Get Executable Manual
+        if: ${{ matrix.os != 'windows-latest' }}
+        run: |-
+          man falkor-bundler | col -bx
