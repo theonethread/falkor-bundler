@@ -1,5 +1,4 @@
 {
-  // NOTE: this config is only picked up by VSCode, actual compiler options will be overridden by falkor-bundler
   "compilerOptions": {
     "allowJs": true,
     "outDir": ".dist",
