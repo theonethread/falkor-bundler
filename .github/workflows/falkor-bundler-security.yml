@@ -1,0 +1,42 @@
+name: Falkor CI - Security
+
+on:
+  workflow_dispatch:
+    inputs:
+      cli:
+        description: Custom CLI arguments for build
+        required: false
+        default: --release
+
+jobs:
+  CId:
+    name: Security CI Suite
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: GitHub Checkout
+        uses: actions/checkout@v2
+
+      - name: Use Node.js v14.x
+        uses: actions/setup-node@v2
+        with:
+          node-version: 14.x
+          cache: npm
+
+      - name: Initialize CodeQL
+        uses: github/codeql-action/init@v1
+        with:
+          languages: javascript
+
+      - name: Install Npm Dependencies
+        run: |-
+          npm ci --ignore-scripts
+
+      - name: Bundle Custom Project
+        run: |-
+          node src/index.js ${{ github.event.inputs.cli }} --input src/index.js
+          node src/index.js ${{ github.event.inputs.cli }} --input src/cli/version.js --out .dist/cli
+
+      - name: Analyse Project
+        uses: github/codeql-action/analyze@v1
