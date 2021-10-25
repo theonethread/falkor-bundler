@@ -380,9 +380,8 @@ try {
             !jsMode && sharedExternals.length
                 ? renameExtensions({
                       include: ["**/*.ts"],
-                      mappings: {
-                          ".ts": ".js"
-                      }
+                      mappings: { ".ts": ".js" },
+                      sourceMap: compilationContext._DEBUG
                   })
                 : undefined,
             // resolve compile-time conditions in resulting javascript files
