@@ -218,9 +218,9 @@ if (pkg.module && pkg.module === `${outDir}/${inputName}.js`) {
 // NOTE: replace directory tree with first directory only, since shared modules my not live in the root of the project
 const pathReplacer = new RegExp(`^${outDir.replace(/^(\.\/)?([^\/]+)(.*)?/, "$1$2")}`);
 const replaceDir = inputDir.replace(/^(\.\/)?([^\/]+)(.*)?/, "$1$2");
+const extReplacer = /\.js$/;
 if (pkg.bin) {
     let binaries;
-    const extReplacer = /\.js$/;
     if (typeof pkg.bin === "string") {
         binaries = [[pkg.name, pkg.bin]];
     } else {
