@@ -1,0 +1,3 @@
+Contact: https://snyk.io/vulnerability-disclosure
+Policy: https://github.com/theonethread/falkor-bundler/security/policy
+Preferred-Languages: en
