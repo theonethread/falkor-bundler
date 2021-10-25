@@ -1,0 +1,38 @@
+name: Falkor CI - Security
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  CIs:
+    name: Security CI Suite
+
+    runs-on: ubuntu-latest
+
+    permissions:
+      actions: read
+      contents: read
+      security-events: write
+
+    steps:
+      - name: GitHub Checkout
+        uses: actions/checkout@v2
+
+      - name: Analyse Project Dependencies
+        uses: snyk/actions/node@master
+        env:
+          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+
+      - name: Use CodeQL v1
+        uses: github/codeql-action/init@v1
+        with:
+          languages: javascript
+
+      - name: Analyse Project Sources
+        uses: github/codeql-action/analyze@v1

@@ -48,8 +48,8 @@ let outDir = ".dist";
 let jsMode = false;
 let bundleMode = "release";
 let bundleModeSet = false;
-const sharedExternals = [];
 const outerExternals = [];
+const sharedExternals = [];
 const compilationContext = {
     _DEBUG: false,
     _RELEASE: true
@@ -218,9 +218,9 @@ if (pkg.module && pkg.module === `${outDir}/${inputName}.js`) {
 // NOTE: replace directory tree with first directory only, since shared modules my not live in the root of the project
 const pathReplacer = new RegExp(`^${outDir.replace(/^(\.\/)?([^\/]+)(.*)?/, "$1$2")}`);
 const replaceDir = inputDir.replace(/^(\.\/)?([^\/]+)(.*)?/, "$1$2");
+const extReplacer = /\.js$/;
 if (pkg.bin) {
     let binaries;
-    const extReplacer = /\.js$/;
     if (typeof pkg.bin === "string") {
         binaries = [[pkg.name, pkg.bin]];
     } else {
@@ -255,6 +255,7 @@ if (pkg.shared) {
         } else {
             let sharedSource = sharedPath.replace(pathReplacer, replaceDir);
             if (!jsMode) {
+                sharedExternals.push(sharedSource);
                 sharedSource = sharedSource.replace(extReplacer, ".ts");
             }
             sharedExternals.push(sharedSource);
@@ -300,13 +301,16 @@ printTask(
 
 printLog(`importing dependencies`);
 
-const [rollup, externals, jscc, typescript, terser, dts] = await Promise.all([
+const [rollup, externals, jscc, typescript, terser, dts, renameExtensions] = await Promise.all([
     import("rollup").then((m) => m.rollup),
     import("rollup-plugin-node-externals").then((m) => m.default),
     import("rollup-plugin-jscc").then((m) => m.default),
     import("@rollup/plugin-typescript").then((m) => m.default),
     import("rollup-plugin-terser").then((m) => m.terser),
-    import("rollup-plugin-dts").then((m) => m.default)
+    import("rollup-plugin-dts").then((m) => m.default),
+    !jsMode && sharedExternals.length
+        ? import("@betit/rollup-plugin-rename-extensions").then((m) => m.default.default) // TODO: weird...
+        : Promise.resolve()
 ]);
 
 const externalsOptions = {
@@ -372,6 +376,14 @@ try {
             // stripped by JSCC in 'release', tree-shaking will not include those in the final bundle
             // WARNING: do not remove comments in this step, they are needed by JSCC
             typescript(typescriptOptions),
+            // TypeScript shared externals' import extension will get rewritten from '.js' to '.ts', we fix that with this plugin in the final output
+            !jsMode && sharedExternals.length
+                ? renameExtensions({
+                      include: ["**/*.ts"],
+                      mappings: { ".ts": ".js" },
+                      sourceMap: compilationContext._DEBUG
+                  })
+                : undefined,
             // resolve compile-time conditions in resulting javascript files
             jscc(jsccOptions),
             // minify code in release mode

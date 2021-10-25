@@ -3,7 +3,8 @@
 [![Npm Keywords](https://img.shields.io/github/package-json/keywords/theonethread/falkor-bundler "Keywords")](https://www.npmjs.com/package/@falkor/falkor-bundler "Visit") &nbsp;
 [![Npm Package](https://img.shields.io/npm/v/@falkor/falkor-bundler "Npm")](https://www.npmjs.com/package/@falkor/falkor-bundler "Visit") &nbsp;
 [![Node Version](https://img.shields.io/node/v/@falkor/falkor-bundler "Node")](https://nodejs.org/ "Visit") &nbsp;
-[![CI](https://img.shields.io/github/workflow/status/theonethread/falkor-bundler/Falkor%20CI%20-%20Release "CI")](https://github.com/theonethread/falkor-bundler/actions "Visit") &nbsp;
+[![Build](https://img.shields.io/github/workflow/status/theonethread/falkor-bundler/Falkor%20CI%20-%20Release "Build")](https://github.com/theonethread/falkor-bundler/actions "Visit") &nbsp;
+[![Security](https://img.shields.io/github/workflow/status/theonethread/falkor-bundler/Falkor%20CI%20-%20Security?label=security "Security")](https://github.com/theonethread/falkor-bundler/actions "Visit") &nbsp;
 [![Activity](https://img.shields.io/github/last-commit/theonethread/falkor-bundler "Activity")](https://github.com/theonethread/falkor-bundler "Visit") &nbsp;
 [![Rollup](https://img.shields.io/npm/dependency-version/@falkor/falkor-bundler/rollup "Rollup")](https://www.npmjs.com/package/rollup "Visit") &nbsp;
 [![TypeScript](https://img.shields.io/npm/dependency-version/@falkor/falkor-bundler/typescript "TypeScript")](https://www.npmjs.com/package/typescript "Visit") &nbsp;
@@ -34,7 +35,7 @@ Include the `@falkor/falkor-bundler` in the `package.json` file under `devDepend
 ...
   "devDependencies": {
     ...
-    "@falkor/falkor-bundler": "1.1.3"
+    "@falkor/falkor-bundler": "1.1.4"
   }
 ```
 
@@ -174,7 +175,17 @@ The `feature/*` branches usually hold ideas and POC code, these will only be mer
 
 ### **GitHub Actions**
 
-Automatic builds are achieved via GitHub actions, CI will make nightly builds of the `develop` branch (using Ubuntu image), and thoroughly test `master` when there is a pull request, or commit on it (using Ubuntu - Win - MacOS image matrix). The workflows can be found [here](https://github.com/theonethread/falkor-bundler/blob/develop/.github/workflows "Open").
+The workflows can be found [here](https://github.com/theonethread/falkor-bundler/blob/develop/.github/workflows "Open").
+
+#### **Continuous Integration**
+
+Automatic builds are achieved via GitHub actions, CI will make nightly builds of the `develop` branch (using Ubuntu image), and test `master` when there is a pull request, or commit on it (using Ubuntu - Win - MacOS image matrix).
+
+#### **Security**
+
+The project uses [CodeQL](https://codeql.github.com "Visit") and [Snyk](https://snyk.io "Visit") to ensure standard security.
+
+> _The **Falkor Framework** supports a healthy and ubiquitous Internet Immune System enabled by security research, reporting, and disclosure. Check out our [Vulnerability Disclosure Policy](https://github.com/theonethread/falkor-bundler/security/policy "Open") - based on [disclose.io](https://disclose.io "Visit")'s best practices._
 
 ### **Open Source**
 
