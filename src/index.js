@@ -5,7 +5,8 @@ import stripJsonComments from "strip-json-comments";
 
 //#region COMMAND LINE INTERFACE
 
-const argv = minimist(process.argv.slice(2));
+// NOTE: differentiate between positional arguments, and options passed after "--" POSIX separator
+const argv = minimist(process.argv.slice(2), { "--": true, string: "--" });
 if (argv.v || argv.version) {
     (await import("./cli/index-cli.js")).default(true);
     process.exit(0);
@@ -130,14 +131,21 @@ Object.keys(argv).forEach((arg) => {
             });
             break;
 
-        case "_":
-            // positional arguments provided by minimist - strongly advised to be listed in the end following '--' POSIX separator
-            if (argv._.length) {
-                if (argv._[0] === "--") {
-                    argv._.shift();
-                }
-                outerExternals.push(...argv._);
+        // extra arguments provided by minimist - must be listed in the end following '--' POSIX separator
+        case "--":
+            if (argv[arg].length) {
+                outerExternals.push(...argv[arg]);
             }
+            break;
+
+        // positional arguments provided by minimist
+        // case "_":
+        //     if (argv._.length) {
+        //     }
+        //     break;
+
+        default:
+            printWarning(`unhandled CLI argument: '-${arg.length > 1 ? "-" : ""}${arg}' (${argv[arg]})`);
             break;
     }
 });
