@@ -139,10 +139,10 @@ Object.keys(argv).forEach((arg) => {
             break;
 
         // positional arguments provided by minimist
-        // case "_":
-        //     if (argv._.length) {
-        //     }
-        //     break;
+        case "_":
+            // if (argv._.length) {
+            // }
+            break;
 
         default:
             printWarning(`unhandled CLI argument: '-${arg.length > 1 ? "-" : ""}${arg}' (${argv[arg]})`);
