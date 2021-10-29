@@ -27,7 +27,8 @@
     "library",
     "lib",
     "binary",
-    "bin"
+    "bin",
+    "build-tool"
   ],
   "type": "module",
   "main": ".dist/index.js",
