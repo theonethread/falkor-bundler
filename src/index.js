@@ -140,8 +140,6 @@ Object.keys(argv).forEach((arg) => {
 
         // positional arguments provided by minimist
         case "_":
-            // if (argv._.length) {
-            // }
             break;
 
         default:
