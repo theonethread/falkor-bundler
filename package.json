@@ -28,6 +28,8 @@
     "lib",
     "binary",
     "bin",
+    "cli",
+    "tool",
     "build-tool"
   ],
   "type": "module",
