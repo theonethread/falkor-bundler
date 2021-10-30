@@ -45,6 +45,11 @@
   "man": [
     ".man/falkor-bundler.1"
   ],
+  "os": [
+    "darwin",
+    "linux",
+    "win32"
+  ],
   "engines": {
     "node": ">=14",
     "npm": ">=6"
