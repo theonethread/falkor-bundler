@@ -97,6 +97,8 @@ JSCC Context:
 
 A space delimited string that uses `#` prefix for variables when parsed. Eg. `"#VALUE #KEY example"` will extend the compilation context with `{ "_VALUE": true, "_KEY": "example" }` after parsed.
 
+If for some reason the `#` character is reserved in your workflow, it can be substituted with any special character starting the value with the `":<special-char> "` sequence, eg. `":$ $VALUE $KEY example"`.
+
 _**NOTE:** `cwd` must be the project root, where `package.json` and `tsconfig.json` can be found. The `--input` file and `--out` directory will be resolved from here._
 
 ## **Required Repository Structure**
