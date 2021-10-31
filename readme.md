@@ -35,7 +35,7 @@ Include the `@falkor/falkor-bundler` in the `package.json` file under `devDepend
 ...
   "devDependencies": {
     ...
-    "@falkor/falkor-bundler": "1.1.5"
+    "@falkor/falkor-bundler": "1.1.6"
   }
 ```
 
@@ -97,6 +97,8 @@ JSCC Context:
 
 A space delimited string that uses `#` prefix for variables when parsed. Eg. `"#VALUE #KEY example"` will extend the compilation context with `{ "_VALUE": true, "_KEY": "example" }` after parsed.
 
+If for some reason the `#` character is reserved in your workflow, it can be substituted with any special character starting the value with the `":<special-char> "` sequence, eg. `":$ $VALUE $KEY example"`.
+
 _**NOTE:** `cwd` must be the project root, where `package.json` and `tsconfig.json` can be found. The `--input` file and `--out` directory will be resolved from here._
 
 ## **Required Repository Structure**
@@ -128,7 +130,7 @@ Binaries can be standalone Node.js applications, or accompanying tools for your 
 
 ### **Required Shared Structure**
 
-Since `v1.1.0` it is possible to internally share modules between binaries and the library. In this case the shared module will not get compiled into both your projects output, but will have to compile it separately. For internally shared modules `package.json` **must**:
+It is possible to internally share modules between binaries and the library, in this case the shared module will not get compiled into both your projects' output, but it will have to be compiled separately. For internally shared modules `package.json` **must**:
 
 * Have a `shared` entry that is:
     * Either a single string input location
@@ -136,7 +138,7 @@ Since `v1.1.0` it is possible to internally share modules between binaries and t
 
 It is advised not to over-complicate these setups, one should consider the whole dependency tree of all projects when doing so.
 
-> _For a complex setup using this technique you can check out my `falkor-auth-server` project on [GitHub](https://github.com/theonethread/falkor-auth-server "Visit")._
+> _For a complex setup using this technique you can check out the `falkor-auth-server` project on [GitHub](https://github.com/theonethread/falkor-auth-server "Visit")._
 
 ### **TypeScript Configuration**
 

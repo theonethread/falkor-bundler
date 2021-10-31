@@ -1,6 +1,6 @@
 {
   "name": "@falkor/falkor-bundler",
-  "version": "1.1.5",
+  "version": "1.1.6",
   "description": "ES6 JavaScript / TypeScript bundler to be used with the Falkor Framework",
   "author": {
     "name": "Barnabas Bucsy",
@@ -13,8 +13,9 @@
     }
   ],
   "license": "MIT",
-  "repository": "github:theonethread/falkor-bundler",
   "homepage": "https://falkor.world/",
+  "repository": "github:theonethread/falkor-bundler",
+  "bugs": "https://github.com/theonethread/falkor-bundler/issues",
   "funding": {
     "type": "individual",
     "url": "https://www.linkedin.com/in/barnabas-bucsy"
@@ -27,7 +28,10 @@
     "library",
     "lib",
     "binary",
-    "bin"
+    "bin",
+    "cli",
+    "tool",
+    "build-tool"
   ],
   "type": "module",
   "main": ".dist/index.js",
@@ -42,6 +46,11 @@
   "man": [
     ".man/falkor-bundler.1"
   ],
+  "os": [
+    "darwin",
+    "linux",
+    "win32"
+  ],
   "engines": {
     "node": ">=14",
     "npm": ">=6"
@@ -53,7 +62,7 @@
     "prepublishOnly": "npm ci && npm run release && npm run man"
   },
   "devDependencies": {
-    "@types/node": "14.17.29",
+    "@types/node": "14.17.32",
     "@types/minimist": "1.2.2",
     "@types/shelljs": "0.8.9",
     "rimraf": "3.0.2"

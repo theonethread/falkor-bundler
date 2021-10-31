@@ -113,12 +113,16 @@ Object.keys(argv).forEach((arg) => {
             }
             let ctx;
             try {
-                ctx = minimist(argv[arg].replace(/#/g, "--").split(/\s+/));
+                let argvStr = argv[arg];
+                let replacer = "#";
+                if (/^:. /.test(argvStr)) {
+                    replacer = argvStr[1];
+                    argvStr = argvStr.substr(3);
+                }
+                ctx = minimist(argvStr.replace(new RegExp("\\" + replacer), "--").split(/\s+/));
                 delete ctx._;
             } catch (e) {
-                printError(
-                    `'context: -${arg.length > 1 ? "-" : ""}${arg}' parse error (using arguments: ${argv[arg]})`
-                );
+                printError(`'context: -${arg.length > 1 ? "-" : ""}${arg}' parse error (using argument: ${argv[arg]})`);
                 process.exit(1);
             }
             const excludeContextKeys = ["DEBUG", "RELEASE", "_", "__", "--"];
@@ -139,10 +143,8 @@ Object.keys(argv).forEach((arg) => {
             break;
 
         // positional arguments provided by minimist
-        // case "_":
-        //     if (argv._.length) {
-        //     }
-        //     break;
+        case "_":
+            break;
 
         default:
             printWarning(`unhandled CLI argument: '-${arg.length > 1 ? "-" : ""}${arg}' (${argv[arg]})`);
