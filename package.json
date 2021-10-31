@@ -13,8 +13,9 @@
     }
   ],
   "license": "MIT",
-  "repository": "github:theonethread/falkor-bundler",
   "homepage": "https://falkor.world/",
+  "repository": "github:theonethread/falkor-bundler",
+  "bugs": "https://github.com/theonethread/falkor-bundler/issues",
   "funding": {
     "type": "individual",
     "url": "https://www.linkedin.com/in/barnabas-bucsy"
