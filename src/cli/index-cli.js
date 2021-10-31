@@ -31,7 +31,7 @@ Options:
 
 JSCC Context:
   A space delimited string that uses '#' prefix for variables when parsed. Eg. "#VALUE #KEY example"
-  will extend the compilation context with { "_VALUE": true, "_KEY": "example" } after parsed.
+  will extend the compilation context with { _VALUE: true, _KEY: "example" } after parsed.
 
   If for some reason the '#' character is reserved in your workflow, it can be substituted with any
   special character starting the value with the ':<special-char> ' sequence, eg. ":$ $VALUE $KEY example".
