@@ -193,6 +193,10 @@ The project uses [CodeQL](https://codeql.github.com "Visit") and [Snyk](https://
 
 The latest sources can always be found on [GitHub](https://github.com/theonethread/falkor-bundler "Visit").
 
+#### **Contributing**
+
+We believe - and we hope you do too - that learning how to code, how to think, and how to contribute to open source can empower the next generation of coders and creators. We **value** first time contributors just the same as rock stars of the OSS world, so if you're interested to get involved, just head over to our [Contribution Guidelines](https://github.com/theonethread/.github/blob/master/.github/contributing.md "Open") for a quick heads-up!
+
 ### **License**
 
 [MIT](https://github.com/theonethread/falkor-bundler/blob/master/license.txt "Open")
