@@ -183,7 +183,7 @@ The workflows can be found [here](https://github.com/theonethread/falkor-bundler
 
 Automatic builds are achieved via GitHub actions, CI will make nightly builds of the `develop` branch (using Ubuntu image), and test `master` when there is a pull request, or commit on it (using Ubuntu - Win - MacOS image matrix).
 
-#### **Security**
+### **Security**
 
 The project uses [CodeQL](https://codeql.github.com "Visit") and [Snyk](https://snyk.io "Visit") to ensure standard security.
 
