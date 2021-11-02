@@ -35,7 +35,7 @@ Include the `@falkor/falkor-bundler` in the `package.json` file under `devDepend
 ...
   "devDependencies": {
     ...
-    "@falkor/falkor-bundler": "1.1.6"
+    "@falkor/falkor-bundler": "1.1.7"
   }
 ```
 
@@ -116,7 +116,7 @@ If a module exposes a library, that must be its main purpose, and it must be ind
 * Have `module` entry named after `main` entry's base name with `js` extension (default: `index.js`)
 * Have `typings` entry named after `main` and `module` entries' base names with `d.ts` extension (default: `index.d.ts`)
 
-While developing a module, best practice is to bundle it up locally in `debug` mode, and link this local package to your application with `npm`. Since in `debug` mode both sourcemaps and declaration-maps are present, one will get meaningful source code locations in errors, and VSCode will navigate seamless between consuming application and linked `debug` module sources.
+While developing a module, best practice is to bundle it up locally in `debug` mode, and link this local package to your application with `npm`. Since in `debug` mode both sourcemaps and declaration-maps are present, one will get meaningful source code locations in errors, and VSCode will navigate seamless between the consuming application and the linked module's sources.
 
 ### **Required Binary Structure**
 
@@ -146,7 +146,7 @@ The project needs a valid `tsconfig.json` in the root directory, but all compile
 
 ## **Further Development**
 
-To compile `falkor-bundler` one can use the commands in the root directory:
+To compile `falkor-bundler` one can use the commands in the root directory after cloning the repository:
 
 ```
 $ npm install
@@ -183,17 +183,21 @@ The workflows can be found [here](https://github.com/theonethread/falkor-bundler
 
 Automatic builds are achieved via GitHub actions, CI will make nightly builds of the `develop` branch (using Ubuntu image), and test `master` when there is a pull request, or commit on it (using Ubuntu - Win - MacOS image matrix).
 
-#### **Security**
+### **Security**
 
 The project uses [CodeQL](https://codeql.github.com "Visit") and [Snyk](https://snyk.io "Visit") to ensure standard security.
 
 > _The **Falkor Framework** supports a healthy and ubiquitous Internet Immune System enabled by security research, reporting, and disclosure. Check out our [Vulnerability Disclosure Policy](https://github.com/theonethread/falkor-bundler/security/policy "Open") - based on [disclose.io](https://disclose.io "Visit")'s best practices._
 
-### **Open Source**
+### **Free and Open Source**
 
 The latest sources can always be found on [GitHub](https://github.com/theonethread/falkor-bundler "Visit").
 
-### **License**
+#### **Getting Involved**
+
+We believe - and we hope you do too - that learning how to code, how to think, and how to contribute to free- and open source software can empower the next generation of coders and creators. We **value** first time contributors just the same as rock stars of the OSS world, so if you're interested to get involved, just head over to our [Contribution Guidelines](https://github.com/theonethread/.github/blob/master/.github/contributing.md "Open") for a quick heads-up!
+
+#### **License**
 
 [MIT](https://github.com/theonethread/falkor-bundler/blob/master/license.txt "Open")
 
