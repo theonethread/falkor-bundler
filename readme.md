@@ -116,7 +116,7 @@ If a module exposes a library, that must be its main purpose, and it must be ind
 * Have `module` entry named after `main` entry's base name with `js` extension (default: `index.js`)
 * Have `typings` entry named after `main` and `module` entries' base names with `d.ts` extension (default: `index.d.ts`)
 
-While developing a module, best practice is to bundle it up locally in `debug` mode, and link this local package to your application with `npm`. Since in `debug` mode both sourcemaps and declaration-maps are present, one will get meaningful source code locations in errors, and VSCode will navigate seamless between consuming application and linked `debug` module sources.
+While developing a module, best practice is to bundle it up locally in `debug` mode, and link this local package to your application with `npm`. Since in `debug` mode both sourcemaps and declaration-maps are present, one will get meaningful source code locations in errors, and VSCode will navigate seamless between the consuming application and the linked module's sources.
 
 ### **Required Binary Structure**
 
