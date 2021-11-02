@@ -195,7 +195,7 @@ The latest sources can always be found on [GitHub](https://github.com/theonethre
 
 #### **Getting Involved**
 
-We believe - and we hope you do too - that learning how to code, how to think, and how to contribute to open source can empower the next generation of coders and creators. We **value** first time contributors just the same as rock stars of the OSS world, so if you're interested to get involved, just head over to our [Contribution Guidelines](https://github.com/theonethread/.github/blob/master/.github/contributing.md "Open") for a quick heads-up!
+We believe - and we hope you do too - that learning how to code, how to think, and how to contribute to free- and open source software can empower the next generation of coders and creators. We **value** first time contributors just the same as rock stars of the OSS world, so if you're interested to get involved, just head over to our [Contribution Guidelines](https://github.com/theonethread/.github/blob/master/.github/contributing.md "Open") for a quick heads-up!
 
 #### **License**
 
