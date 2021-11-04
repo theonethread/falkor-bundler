@@ -46,13 +46,13 @@ _**NOTE:** And don't forget to run `npm install` afterwards._
 To install the package locally with `npm` (this will alter your `package.json`):
 
 ```
-$ npm install "@falkor/falkor-bundler" --save-dev
+$ npm install @falkor/falkor-bundler --save-dev
 ```
 
 It's also possible to install the package globally, so it's available in your `PATH`:
 
 ```
-$ npm install "@falkor/falkor-bundler" --global
+$ npm install @falkor/falkor-bundler --global
 ```
 
 ## **Usage**
