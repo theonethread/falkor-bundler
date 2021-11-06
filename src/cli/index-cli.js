@@ -2,6 +2,7 @@ import path from "path";
 import { fileURLToPath } from "url";
 import shell from "shelljs";
 
+// index.js gets generated to the .dist directory, we walk upwards from there:
 const getOwnVersion = (fileUrl) =>
     JSON.parse(shell.cat(path.join(path.dirname(fileURLToPath(fileUrl)), "..", "package.json"))).version;
 
