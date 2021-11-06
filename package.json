@@ -44,7 +44,6 @@
   "bin": {
     "falkor-bundler": ".dist/index.js"
   },
-  "shared": ".dist/cli/version.js",
   "files": [
     ".dist",
     ".man"
@@ -62,8 +61,8 @@
     "npm": ">=6"
   },
   "scripts": {
-    "debug": "rimraf .dist/**/* && node src/index.js --debug --input src/index.js && node src/index.js --debug --input src/cli/version.js --out .dist/cli",
-    "release": "rimraf .dist/**/* && node src/index.js --release --input src/index.js && node src/index.js --release --input src/cli/version.js --out .dist/cli",
+    "debug": "rimraf .dist/**/* && node src/index.js --debug --input src/index.js",
+    "release": "rimraf .dist/**/* && node src/index.js --release --input src/index.js",
     "man": "pandoc --version && (mkdir .man || rimraf .man/**/*) && pandoc --standalone --to man ./man/man.md --output ./.man/falkor-bundler.1",
     "prepublishOnly": "npm ci && npm run release && npm run man"
   },

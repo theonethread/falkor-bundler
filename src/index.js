@@ -8,11 +8,11 @@ import stripJsonComments from "strip-json-comments";
 // NOTE: differentiate between positional arguments, and options passed after "--" POSIX separator
 const argv = minimist(process.argv.slice(2), { "--": true, string: "--" });
 if (argv.v || argv.version) {
-    (await import("./cli/index-cli.js")).default(true);
+    (await import("./cli/index-cli.js")).default(import.meta.url, true);
     process.exit(0);
 }
 if (argv.h || argv.help) {
-    (await import("./cli/index-cli.js")).default();
+    (await import("./cli/index-cli.js")).default(import.meta.url);
     process.exit(0);
 }
 
