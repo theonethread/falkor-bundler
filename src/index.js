@@ -8,7 +8,7 @@ import stripJsonComments from "strip-json-comments";
 
 // NOTE: differentiate between positional arguments, and options passed after "--" POSIX separator
 const argv = minimist(process.argv.slice(2), { "--": true, string: "--" });
-(() => {
+await (async () => {
     let version = argv.v || argv.version;
     if (version || argv.h || argv.help) {
         (await import("./cli/index-cli.js")).default(import.meta.url, version);
