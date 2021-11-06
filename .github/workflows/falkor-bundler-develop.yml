@@ -33,10 +33,10 @@ jobs:
         run: |-
           npm run release
 
-      - name: Use Pandoc v2.14.2
+      - name: Use Pandoc v2.16.1
         uses: r-lib/actions/setup-pandoc@v1
         with:
-          pandoc-version: "2.14.2"
+          pandoc-version: "2.16.1"
 
       - name: Build Manual
         run: |-

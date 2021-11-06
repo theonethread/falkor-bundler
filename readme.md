@@ -35,7 +35,7 @@ Include the `@falkor/falkor-bundler` in the `package.json` file under `devDepend
 ...
   "devDependencies": {
     ...
-    "@falkor/falkor-bundler": "1.1.7"
+    "@falkor/falkor-bundler": "1.1.8"
   }
 ```
 
@@ -46,13 +46,13 @@ _**NOTE:** And don't forget to run `npm install` afterwards._
 To install the package locally with `npm` (this will alter your `package.json`):
 
 ```
-$ npm install "@falkor/falkor-bundler" --save-dev
+$ npm install @falkor/falkor-bundler --save-dev
 ```
 
 It's also possible to install the package globally, so it's available in your `PATH`:
 
 ```
-$ npm install "@falkor/falkor-bundler" --global
+$ npm install @falkor/falkor-bundler --global
 ```
 
 ## **Usage**
@@ -69,7 +69,7 @@ As a dependency, one can use the command-line executable in `npm` scripts. As pa
   }
 ```
 
-_**NOTE:** `falkor-bundler` creates a release bundle by default, and **will not** empty the output directory before. It was designed this way to support building multiple outputs (eg. both an exported module and a command line application), so a good starter for bundling is to use [`rimraf`](https://www.npmjs.com/package/rimraf "Visit") or similar, to do the cleanup yourself._
+_**NOTE:** `falkor-bundler` creates a release bundle by default, and **will not** empty the output directory before. It was designed this way to support building multiple outputs (eg. both an exported module and a command line application), so a good starter for bundling is to use [`rimraf`](https://www.npmjs.com/package/rimraf "Visit") or similar, to do the cleanup of the exact output(s) of your distinct jobs yourself._
 
 ### **Command Line Interface**
 
@@ -111,7 +111,7 @@ The `falkor-bundler` project was mainly developed to compile ES6 `npm` packages 
 
 ### **Required Module Structure**
 
-If a module exposes a library, that must be its main purpose, and it must be indicated in `package.json`. This does not mean, that it can not have accompanying binaries, eg. tools, boilerplate generators, etc. For a module project `package.json` **must**:
+If a module exposes a library, that must be it's main purpose, and it must be indicated in `package.json`. This does not mean, that it can not have accompanying binaries, eg. tools, boilerplate generators, etc. For a module project `package.json` **must**:
 
 * Have `module` entry named after `main` entry's base name with `js` extension (default: `index.js`)
 * Have `typings` entry named after `main` and `module` entries' base names with `d.ts` extension (default: `index.d.ts`)
@@ -167,9 +167,9 @@ $ npm run man
 
 ### **Versioning and Branching Strategy**
 
-Release sources can be found on the `master` branch, this one always points to the latest tagged release. Previous sources of releases' can be found using Git version tags (or browsing GitHub releases). Released packages can be found on [npmjs](https://www.npmjs.com/package/@falkor/falkor-bundler "Visit").
+Release sources can be found on the `master` branch, this one always points to the latest tagged release. Previous sources of releases can be found using Git version tags (or browsing GitHub releases). Released packages can be found on [npmjs](https://www.npmjs.com/package/@falkor/falkor-bundler "Visit").
 
-The repository's main branch is `develop` (due to technical reasons), this holds all developments that are already decided to be included in the next release. Usually this branch is ahead of master one patch version (but based on upcoming features to include this can become minor, or major), so prepared external links may yet be broken.
+The repository's main branch is `develop` (due to technical reasons), this holds all developments that are already decided to be included in the next release. Usually this branch is ahead of `master` one patch version (but based on upcoming features to include this can become minor, or major), so prepared external links may yet be broken.
 
 The `feature/*` branches usually hold ideas and POC code, these will only be merged into `develop` once their impact measured and quality meets release requirements.
 
@@ -195,7 +195,7 @@ The latest sources can always be found on [GitHub](https://github.com/theonethre
 
 #### **Getting Involved**
 
-We believe - and we hope you do too - that learning how to code, how to think, and how to contribute to free- and open source software can empower the next generation of coders and creators. We **value** first time contributors just the same as rock stars of the OSS world, so if you're interested to get involved, just head over to our [Contribution Guidelines](https://github.com/theonethread/.github/blob/master/.github/contributing.md "Open") for a quick heads-up!
+We believe - and we hope you do too - that learning how to code, how to think, and how to contribute to free- and open source software can empower the next generation of coders and creators. We **value** first time contributors just the same as rock stars of the OSS world, so if you're interested in getting involved, just head over to our [Contribution Guidelines](https://github.com/theonethread/.github/blob/master/.github/contributing.md "Open") for a quick heads-up!
 
 #### **License**
 

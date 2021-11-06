@@ -1,14 +1,20 @@
-import getOwnVersion from "./version.js";
+import path from "path";
+import { fileURLToPath } from "url";
+import shell from "shelljs";
 
-export default (short = false) => {
+// index.js gets generated to the .dist directory, we walk upwards from there:
+const getOwnVersion = (fileUrl) =>
+    JSON.parse(shell.cat(path.join(path.dirname(fileURLToPath(fileUrl)), "..", "package.json"))).version;
+
+export default (fileUrl, short = false) => {
     if (short) {
-        console.log("falkor-bundler version", getOwnVersion());
+        console.log("falkor-bundler version", getOwnVersion(fileUrl));
         return;
     }
 
     console.log(`
 [Falkor Bundler]
-version ${getOwnVersion()}
+version ${getOwnVersion(fileUrl)}
 (C)2020-2021 Barnabas Bucsy - All rights reserved.
 
 Opinionated ES6 JavaScript / TypeScript module bundler - part of the Falkor Framework
