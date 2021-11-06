@@ -196,7 +196,7 @@ printTask("validating package.json");
 
 let pkg;
 let moduleName;
-let moduleMode = false;
+let libraryMode = false;
 let binaryMode = false;
 let sharedMode = false;
 const buildModes = [];
@@ -222,7 +222,7 @@ if (pkg.module && pkg.module === `${outDir}/${inputName}.js`) {
         printError(`'typings' in package.json is not named after 'module'`);
         process.exit(1);
     }
-    moduleMode = true;
+    libraryMode = true;
     buildModes.push("module");
 }
 // NOTE: replace directory tree with first directory only, since shared modules my not live in the root of the project
@@ -273,7 +273,7 @@ if (pkg.shared) {
     });
 }
 
-if (!moduleMode && !binaryMode && !sharedMode) {
+if (!libraryMode && !binaryMode && !sharedMode) {
     printError("nor 'binary' nor 'module' nor 'shared' build mode could be resolved from package.json");
     process.exit(1);
 }
@@ -339,9 +339,9 @@ const typescriptOptions = {
     target,
     rootDir: inputDir,
     allowJs: jsMode,
-    declaration: moduleMode,
-    declarationDir: moduleMode ? `${outDir}${compilationContext._DEBUG ? "" : "/" + tempTypesDir}` : undefined,
-    declarationMap: moduleMode && compilationContext._DEBUG,
+    declaration: libraryMode,
+    declarationDir: libraryMode ? `${outDir}${compilationContext._DEBUG ? "" : "/" + tempTypesDir}` : undefined,
+    declarationMap: libraryMode && compilationContext._DEBUG,
     preserveConstEnums: compilationContext._DEBUG,
     sourceMap: compilationContext._DEBUG,
     module: "ESNext",
@@ -377,7 +377,7 @@ try {
 
     const sourceBundle = await rollup({
         input,
-        preserveEntrySignatures: moduleMode || sharedMode ? "strict" : false,
+        preserveEntrySignatures: libraryMode || sharedMode ? "strict" : false,
         external: outerExternals.length ? outerExternals : undefined,
         plugins: [
             externals(externalsOptions),
@@ -407,7 +407,7 @@ try {
     printLog("closing javascript bundle");
     await sourceBundle.close();
 
-    if (moduleMode && compilationContext._RELEASE) {
+    if (libraryMode && compilationContext._RELEASE) {
         printLog("creating typings bundle");
 
         const typingsOutputOptions = {
