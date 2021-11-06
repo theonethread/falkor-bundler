@@ -3,7 +3,7 @@ import { fileURLToPath } from "url";
 import shell from "shelljs";
 
 const getOwnVersion = (fileUrl) =>
-    JSON.parse(shell.cat(path.join(path.dirname(fileURLToPath(fileUrl)), "../package.json"))).version;
+    JSON.parse(shell.cat(path.join(path.dirname(fileURLToPath(fileUrl)), "..", "package.json"))).version;
 
 export default (fileUrl, short = false) => {
     if (short) {
