@@ -149,7 +149,7 @@ The project needs a valid `tsconfig.json` in the root directory, but all compile
 To clone the repository and compile `falkor-bundler` one can use the commands:
 
 ```
-$ git clone git@github.com:theonethread/falkor-commander.git
+$ git clone --branch develop git@github.com:theonethread/falkor-commander.git
 $ cd falkor-commander
 $ npm install
 $ npm run [ debug | release ]
