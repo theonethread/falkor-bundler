@@ -1,5 +1,6 @@
 import path from "path";
 import shell from "shelljs";
+import minimist from "minimist";
 
 const cliConfig = {
     input: "src/index.ts",

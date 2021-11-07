@@ -1,8 +1,6 @@
 import process from "process";
 import path from "path";
 import minimist from "minimist";
-import shell from "shelljs";
-import stripJsonComments from "strip-json-comments";
 import loggerFactory from "./cli/logger.js";
 import cliValidator from "./validator/cli-validator.js";
 import tsconfigValidator from "./validator/tsconfig-validator.js";
@@ -22,11 +20,11 @@ await (async () => {
 const logger = loggerFactory(argv);
 const arrayOfStringLogJoiner = "', '";
 const cwd = process.cwd();
+// FUTURE: maybe make this configurable?
+const tempTypesDir = ".types";
 
 logger.printFalkor("starting");
 
-// FUTURE: maybe make this configurable?
-const tempTypesDir = ".types";
 let cliConfig;
 let tsConfig;
 let packageConfig;
