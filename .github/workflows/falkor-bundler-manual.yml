@@ -40,7 +40,6 @@ jobs:
       - name: Bundle Custom Project
         run: |-
           node src/index.js ${{ github.event.inputs.cli }} --input src/index.js
-          node src/index.js ${{ github.event.inputs.cli }} --input src/cli/version.js --out .dist/cli
 
       - name: Use Pandoc v2.16.1
         if: ${{ matrix.os != 'windows-latest' }}
