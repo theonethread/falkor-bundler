@@ -18,15 +18,15 @@ The **falkor-bundler** project is a standalone npm command-line application writ
 
 The project aims to abstract away distinct build setting difficulties from developers, requiring only to follow certain predefined rules, which are necessary for the automation of:
 
--   TypeScript compilation
--   Resolution of compile-time conditions
--   Module bundling - including tree-shaking
--   Plus:
-    -   In **debug** mode:
-        -   Sourcemaps for generated JavaScript, and declaration-maps pointing to local TS sources (for linked usage while developing)
-    -   In **release** mode:
-        -   Minification of resulting JavaScript bundle
-        -   Creation of flattened declaration file (for consuming when used as a dependency)
+- TypeScript compilation
+- Resolution of compile-time conditions
+- Module bundling - including tree-shaking
+- Plus:
+  - In **debug** mode:
+    - Sourcemaps for generated JavaScript, and declaration-maps pointing to local TS sources (for linked usage while developing)
+  - In **release** mode:
+    - Minification of resulting JavaScript bundle
+    - Creation of flattened declaration file (for consuming when used as a dependency)
 
 # OPTIONS
 

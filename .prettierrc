@@ -20,3 +20,4 @@ overrides:
   - files: "*.md"
     options:
       proseWrap: never
+      tabWidth: 2
