@@ -8,7 +8,11 @@
     "theonethread",
     "npmjs",
     "asloader",
+    "codeql",
     "snyk",
-    "betit"
+    "betit",
+    "prettierrc",
+    "loglevel",
+    "parens"
   ]
 }

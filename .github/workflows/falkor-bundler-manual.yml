@@ -33,6 +33,10 @@ jobs:
         run: |-
           npm ci --ignore-scripts
 
+      - name: Lint Project
+        run: |-
+          npm run lint
+
       - name: Bundle Custom Project
         run: |-
           node src/index.js ${{ github.event.inputs.cli }} --input src/index.js
