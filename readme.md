@@ -148,6 +148,8 @@ $ npm run [ debug | release ]
 
 This will use the project's raw JavaScript source to create a distribution from itself. :sunglasses:
 
+> _**SEE:** `"scripts"` entry in [`package.json`](https://github.com/theonethread/falkor-library/blob/master/package.json "Open") for further reference._
+
 ### **Man Page**
 
 By default the `falkor-bundler` module ships with a pre-compiled man page when installed on Unix-like operating systems. The manual was created by converting the file [`man/man.md`](https://github.com/theonethread/falkor-bundler/blob/master/man/man.md "Open").
@@ -157,6 +159,16 @@ To recompile the manual, make sure that [`Pandoc`](https://pandoc.org/ "Visit") 
 ```
 $ npm run man
 ```
+
+### **Linting**
+
+The project uses [`prettier`](https://www.npmjs.com/package/prettier "Visit"), to lint sources and documentation run:
+
+```
+$ npm run lint
+```
+
+> _**SEE:** [`.prettierrc`](https://github.com/theonethread/falkor-bundler/blob/develop/.prettierrc "Open") for further reference._
 
 ### **Versioning and Branching Strategy**
 
