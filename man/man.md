@@ -30,23 +30,32 @@ The project aims to abstract away distinct build setting difficulties from devel
 
 # OPTIONS
 
-`-v`, `--version` : Show version and exit
+`-v`, `--version`  
+: Show version and exit
 
-`-h`, `--help` : Show help and exit
+`-h`, `--help`  
+: Show help and exit
 
-`-r`, `--release` : Bundle in **release** mode, only used for readability (default)
+`-r`, `--release`  
+: Bundle in **release** mode, only used for readability (default)
 
-`-d`, `--debug` : Bundle in **debug** mode
+`-d`, `--debug`  
+: Bundle in **debug** mode
 
-`-s`, `--silent` : Do not print messages
+`-s`, `--silent`  
+: Do not print messages
 
-`-i <file>`, `--input <file>` : Entry **.ts** or **.js** file (default: **src/index.ts**)
+`-i <file>`, `--input <file>`  
+: Entry **.ts** or **.js** file (default: **src/index.ts**)
 
-`-o <dir>`, `--out <dir>` : Output directory of bundle (default: **.dist**)
+`-o <dir>`, `--out <dir>`  
+: Output directory of bundle (default: **.dist**)
 
-`-c <ctx>`, `--context <ctx>` : JSCC compilation context (see below)
+`-c <ctx>`, `--context <ctx>`  
+: JSCC compilation context (see below)
 
-`-- <externals>...` : Treat all positional arguments after double dash as externals
+`-- <externals>...`  
+: Treat all positional arguments after double dash as externals
 
 # JSCC CONTEXT
 
