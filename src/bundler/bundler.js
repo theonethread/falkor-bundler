@@ -1,5 +1,5 @@
 /** @throws 1 */
-export default async (cliConfig, tsConfig, packageConfig, tempTypesDir, logger) => {
+export default async (cliConfig, packageConfig, tempTypesDir, logger) => {
     logger.printTask(
         `bundling ${packageConfig.buildModes.join(" & ")} '${packageConfig.packageName}${
             packageConfig.moduleName && packageConfig.packageName !== packageConfig.moduleName
