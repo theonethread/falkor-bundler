@@ -19,7 +19,7 @@ const cliConfig = {
 /** @throws 1 */
 export default (argv, tempTypesDir, logger) => {
     logger.printTask("validating command line arguments");
-    const bundleModeSet = false;
+    let bundleModeSet = false;
     Object.keys(argv).forEach((arg) => {
         switch (arg) {
             case "d":
@@ -36,8 +36,8 @@ export default (argv, tempTypesDir, logger) => {
                     throw 1;
                 }
                 if (tryingDebug) {
-                    cliConfig.compilationContext._DEBUG = argv[arg];
-                    cliConfig.compilationContext._RELEASE = !argv[arg];
+                    cliConfig.compilationContext._DEBUG = true;
+                    cliConfig.compilationContext._RELEASE = false;
                     cliConfig.bundleMode = "debug";
                 }
                 bundleModeSet = true;
@@ -133,7 +133,8 @@ export default (argv, tempTypesDir, logger) => {
         );
         throw 1;
     }
-    cliConfig.inputDir = inputDir;
 
+    cliConfig.inputName = inputName;
+    cliConfig.inputDir = inputDir;
     return cliConfig;
 };

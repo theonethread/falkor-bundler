@@ -44,7 +44,7 @@ export default (cliConfig, logger) => {
     }
     // NOTE: replace directory tree with first directory only, since shared modules my not live in the root of the project
     const pathReplacer = new RegExp(`^${cliConfig.outDir.replace(/^(\.\/)?([^\/]+)(.*)?/, "$1$2")}`);
-    const replaceDir = inputDir.replace(/^(\.\/)?([^\/]+)(.*)?/, "$1$2");
+    const replaceDir = cliConfig.inputDir.replace(/^(\.\/)?([^\/]+)(.*)?/, "$1$2");
     if (pkg.bin) {
         let binaries;
         if (typeof pkg.bin === "string") {
@@ -53,7 +53,7 @@ export default (cliConfig, logger) => {
             binaries = Object.entries(pkg.bin);
         }
         for (const [binName, binPath] of binaries) {
-            if (binPath === `${cliConfig.outDir}/${inputName}.js`) {
+            if (binPath === `${cliConfig.outDir}/${cliConfig.inputName}.js`) {
                 packageConfig.moduleName = binName;
                 packageConfig.binaryMode = true;
                 packageConfig.buildModes.push("binary");
@@ -89,7 +89,7 @@ export default (cliConfig, logger) => {
         });
     }
 
-    if (!packageConfig.libraryMode && !packageConfig.binaryMode && !packageConfig.sharedMode) {
+    if (!(packageConfig.libraryMode || packageConfig.binaryMode || packageConfig.sharedMode)) {
         logger.printError("nor 'binary' nor 'library' nor 'shared' build mode could be resolved from package.json");
         throw 1;
     }

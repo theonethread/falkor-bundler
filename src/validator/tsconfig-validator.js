@@ -14,7 +14,7 @@ export default (logger) => {
         // FUTURE: extract 'target', support ES5 with package 'browser'?
         if (tsc.target && tsc.target !== tsConfig.target) {
             logger.printError("invalid 'target' in tsconfig.json, currently only 'ESNext' is supported");
-            process.exit(1);
+            throw 1;
         }
     } catch (e) {
         logger.printError("invalid tsconfig.json, working directory must be TypeScript project root");
