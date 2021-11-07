@@ -1,5 +1,9 @@
+import path from "path";
+import shell from "shelljs";
+
 const cliConfig = {
     input: "src/index.ts",
+    inputDir: "src",
     outDir: ".dist",
     jsMode: false,
     bundleMode: "release",
@@ -12,7 +16,7 @@ const cliConfig = {
 };
 
 /** @throws 1 */
-export default (argv, logger, tempTypesDir) => {
+export default (argv, tempTypesDir, logger) => {
     logger.printTask("validating command line arguments");
     const bundleModeSet = false;
     Object.keys(argv).forEach((arg) => {
@@ -128,6 +132,7 @@ export default (argv, logger, tempTypesDir) => {
         );
         throw 1;
     }
+    cliConfig.inputDir = inputDir;
 
     return cliConfig;
 };
