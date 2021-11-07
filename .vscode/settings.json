@@ -9,6 +9,9 @@
     "npmjs",
     "asloader",
     "snyk",
-    "betit"
+    "betit",
+    "prettierrc",
+    "loglevel",
+    "parens"
   ]
 }
