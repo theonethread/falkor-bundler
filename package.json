@@ -63,7 +63,7 @@
   "scripts": {
     "debug": "rimraf .dist/**/* && node src/index.js --debug --input src/index.js",
     "release": "rimraf .dist/**/* && node src/index.js --release --input src/index.js",
-    "lint": "prettier --check . && cspell lint --no-progress --wordsOnly --unique --gitignore **",
+    "lint": "prettier --check . && cspell lint --no-progress --wordsOnly --unique --gitignore --exclude .git ** .*",
     "man": "pandoc --version && (mkdir .man || rimraf .man/**/*) && pandoc --standalone --to man ./man/man.md --output ./.man/falkor-bundler.1",
     "prepublishOnly": "npm ci && npm run lint && npm run release && npm run man"
   },
