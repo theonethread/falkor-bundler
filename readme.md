@@ -169,9 +169,9 @@ $ npm run lint
 ```
 
 > _**SEE:** [`.prettierrc`](https://github.com/theonethread/falkor-bundler/blob/develop/.prettierrc "Open") and [`.cspell.json`](https://github.com/theonethread/falkor-bundler/blob/develop/.cspell.json "Open") for further reference._
->
-> * _To fix formatting issues run `$ npx prettier --write <path-to-file>`. This will overwrite the file with the default formatting applied locally, so then you can review the changes in `git` and **ensure those did not affect production artifacts**._
-> * _To fix spelling errors run `$ npx cspell lint --wordsOnly --unique --gitignore --exclude .git ** .*` for details, and either add `cspell` favored comments to the sources listed, or extend project-wide `.cspell.json` accordingly._
+
+* _To fix formatting issues run `$ npx prettier --write <path-to-file>`. This will overwrite the file with the default formatting applied locally, so then you can review the changes in `git` and **ensure those did not affect production artifacts**._
+* _To fix spelling errors run `$ npx cspell lint --wordsOnly --unique --gitignore --exclude .git ** .*` for details, and either add `cspell` favored comments to the sources listed, or extend project-wide `.cspell.json` accordingly._
 
 ### **Versioning and Branching Strategy**
 
