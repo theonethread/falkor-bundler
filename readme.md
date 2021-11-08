@@ -100,9 +100,9 @@ The `falkor-bundler` project was mainly developed to compile ES6 `npm` packages 
 - Have `"type": "module"` entry in `package.json`
 - Have either a `"module"` or `"bin"` entry in `package.json`
 
-### **Required Module Structure**
+### **Required Library Structure**
 
-If a module exposes a library, that must be it's main purpose, and it must be indicated in `package.json`. This does not mean, that it can not have accompanying binaries, eg. tools, boilerplate generators, etc. For a module project `package.json` **must**:
+If a module exposes a library, that must be its main purpose, and it must be indicated in `package.json`. This does not mean, that it can not have accompanying binaries, eg. tools, boilerplate generators, etc. For a library project `package.json` **must**:
 
 - Have `module` entry named after `main` entry's base name with `js` extension (default: `index.js`)
 - Have `typings` entry named after `main` and `module` entries' base names with `d.ts` extension (default: `index.d.ts`)
@@ -162,13 +162,16 @@ $ npm run man
 
 ### **Linting**
 
-The project uses [`prettier`](https://www.npmjs.com/package/prettier "Visit"), to lint sources and documentation run:
+The project uses [`prettier`](https://www.npmjs.com/package/prettier "Visit") for code formatting and [`cspell`](https://www.npmjs.com/package/cspell "Visit") to avoid general typos in both sources and documentation - it is advised to install these packages as extensions in your IDE to prevent CI errors beforehand. To lint the project run:
 
 ```
 $ npm run lint
 ```
 
-> _**SEE:** [`.prettierrc`](https://github.com/theonethread/falkor-bundler/blob/develop/.prettierrc "Open") for further reference._
+> _**SEE:** [`.prettierrc`](https://github.com/theonethread/falkor-bundler/blob/develop/.prettierrc "Open") and [`.cspell.json`](https://github.com/theonethread/falkor-bundler/blob/develop/.cspell.json "Open") for further reference._
+
+- To fix formatting issues run `$ npx prettier --write <path-to-file>`. This will overwrite the file with the default formatting applied locally, so then you can review the changes in `git` and **ensure those did not affect production artifacts**.
+- To fix spelling errors run `$ npx cspell lint --wordsOnly --unique --gitignore --exclude .git ** .*` for details, and either add `cspell` favored comments to the sources listed, or extend project-wide `.cspell.json` accordingly.
 
 ### **Versioning and Branching Strategy**
 
