@@ -177,13 +177,13 @@ $ npm run lint
 
 ### **Versioning and Branching Strategy**
 
-Release sources can be found on the `master` branch, this one always points to the latest tagged release. Previous sources of releases can be found using Git version tags (or browsing GitHub releases). Released packages can be found on [npmjs](https://www.npmjs.com/package/@falkor/falkor-bundler "Visit").
+Release sources can be found on the `master` branch, this one always points to the latest tagged release. Previous sources of releases can be found using `git` version tags (or browsing GitHub releases). Released packages can be found on [npmjs](https://www.npmjs.com/package/@falkor/falkor-bundler "Visit").
 
 The repository's main branch is `develop` (due to technical reasons), this holds all developments that are already decided to be included in the next release. Usually this branch is ahead of `master` one patch version (but based on upcoming features to include this can become minor, or major), so prepared external links may yet be broken.
 
 The `feature/*` branches usually hold ideas and POC code, these will only be merged into `develop` once their impact measured and quality meets release requirements.
 
-> _The project uses [SemVer](https://semver.org "Visit"), Git tags are prefixed with a `v` character._
+> _The project uses [SemVer](https://semver.org "Visit"), `git` tags are prefixed with a `v` character._
 
 ### **GitHub Actions**
 
