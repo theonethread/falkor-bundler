@@ -100,9 +100,9 @@ The `falkor-bundler` project was mainly developed to compile ES6 `npm` packages 
 - Have `"type": "module"` entry in `package.json`
 - Have either a `"module"` or `"bin"` entry in `package.json`
 
-### **Required Module Structure**
+### **Required Library Structure**
 
-If a module exposes a library, that must be it's main purpose, and it must be indicated in `package.json`. This does not mean, that it can not have accompanying binaries, eg. tools, boilerplate generators, etc. For a module project `package.json` **must**:
+If a module exposes a library, that must be its main purpose, and it must be indicated in `package.json`. This does not mean, that it can not have accompanying binaries, eg. tools, boilerplate generators, etc. For a library project `package.json` **must**:
 
 - Have `module` entry named after `main` entry's base name with `js` extension (default: `index.js`)
 - Have `typings` entry named after `main` and `module` entries' base names with `d.ts` extension (default: `index.d.ts`)
