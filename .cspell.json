@@ -1,16 +1,18 @@
 {
-  "cSpell.words": [
-    "Bucsy",
-    "endregion",
+  "version": "0.2",
+  "language": "en",
+  "words": [
     "falkor",
+    "Bucsy",
     "jscc",
+    "asloader",
+    "betit",
+    "endregion",
     "pandoc",
     "theonethread",
     "npmjs",
-    "asloader",
     "codeql",
     "snyk",
-    "betit",
     "prettierrc",
     "loglevel",
     "parens"
