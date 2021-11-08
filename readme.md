@@ -107,7 +107,7 @@ If a module exposes a library, that must be its main purpose, and it must be ind
 - Have `module` entry named after `main` entry's base name with `js` extension (default: `index.js`)
 - Have `typings` entry named after `main` and `module` entries' base names with `d.ts` extension (default: `index.d.ts`)
 
-> While developing a module, best practice is to bundle it up locally in `debug` mode, and link this local package to your application with `npm`. Since in `debug` mode both sourcemaps and declaration-maps are present, one will get meaningful source code locations in errors, and VSCode will navigate seamless between the consuming application and the linked module's sources.
+> _While developing a library, best practice is to bundle it up locally in `debug` mode, and link this local package to your application with `npm`. Since in `debug` mode both sourcemaps and declaration-maps are present, one will get meaningful source code locations in errors, and VSCode will navigate seamless between the consuming application and the linked module's sources._
 >
 > _**SEE:** [`npm-link`](https://docs.npmjs.com/cli/v7/commands/npm-link "Visit") for further reference._
 
@@ -123,14 +123,14 @@ Binaries can be standalone Node.js applications, or accompanying tools for your 
 
 ### **Required Shared Module Structure**
 
-It is possible to internally share modules between binaries and your library, in this case the shared module will not get compiled into both your projects' output, but it will have to be compiled separately. For internally shared modules `package.json` **must**:
+It is possible to internally share modules between binaries and your library, in this case the shared module will not get compiled into both your projects' artifacts, but it will have to be handled separately. For internally shared modules `package.json` **must**:
 
 - Have a `shared` entry that is:
   - Either a single string input location
   - Or an array of string input locations
 
-It is advised not to over-complicate these setups, one should consider the whole dependency tree of all projects when doing so.
-
+> _It is advised not to over-complicate these setups, one should consider the whole dependency tree of all projects when doing so._
+>
 > _For a complex setup using this technique you can check out the `falkor-auth-server` project on [GitHub](https://github.com/theonethread/falkor-auth-server "Visit")._
 
 ### **TypeScript Configuration**
