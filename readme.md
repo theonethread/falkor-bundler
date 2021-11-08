@@ -162,7 +162,7 @@ $ npm run man
 
 ### **Linting**
 
-The project uses [`prettier`](https://www.npmjs.com/package/prettier "Visit"), to lint sources and documentation run:
+The project uses [`prettier`](https://www.npmjs.com/package/prettier "Visit") for code formatting and [`cspell`](https://www.npmjs.com/package/cspell "Visit") to avoid general typos. To lint both sources and documentation run:
 
 ```
 $ npm run lint
