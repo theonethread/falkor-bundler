@@ -119,7 +119,7 @@ Binaries can be standalone Node.js applications, or accompanying tools for your 
   - Either a single string input location (in this case the binary will use your project's name from `package.json`)
   - Or an object that's keys are the names of the binaries, and their values are the input locations
 
-> _It is a good idea to package a `man` page with standalone applications. You can check out this project's setup in [`package.json`](https://github.com/theonethread/falkor-bundler/blob/master/package.json "Open") and [`man.md`](https://github.com/theonethread/falkor-bundler/blob/master/man.md "Open") for details._
+> _It is a good idea to package a `man` page with standalone applications. You can check out this project's setup in [`package.json`](https://github.com/theonethread/falkor-bundler/blob/master/package.json "Open") and [`man.md`](https://github.com/theonethread/falkor-bundler/blob/master/man/man.md "Open") for details._
 
 ### **Required Shared Module Structure**
 
