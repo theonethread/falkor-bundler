@@ -119,9 +119,9 @@ Binaries can be standalone Node.js applications, or accompanying tools for your 
 
 > _It is a good idea to package a `man` page with standalone applications. You can check out this project's setup in [`package.json`](https://github.com/theonethread/falkor-bundler/blob/master/package.json "Open") and [`man.md`](https://github.com/theonethread/falkor-bundler/blob/master/man.md "Open") for details._
 
-### **Required Shared Structure**
+### **Required Shared Module Structure**
 
-It is possible to internally share modules between binaries and the library, in this case the shared module will not get compiled into both your projects' output, but it will have to be compiled separately. For internally shared modules `package.json` **must**:
+It is possible to internally share modules between binaries and your library, in this case the shared module will not get compiled into both your projects' output, but it will have to be compiled separately. For internally shared modules `package.json` **must**:
 
 - Have a `shared` entry that is:
   - Either a single string input location
