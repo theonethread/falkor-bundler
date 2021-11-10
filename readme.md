@@ -107,7 +107,7 @@ If a module exposes a library, that must be its main purpose, and it must be ind
 - Have `module` entry named after `main` entry's base name with `js` extension (default: `index.js`)
 - Have `typings` entry named after `main` and `module` entries' base names with `d.ts` extension (default: `index.d.ts`)
 
-> While developing a module, best practice is to bundle it up locally in `debug` mode, and link this local package to your application with `npm`. Since in `debug` mode both sourcemaps and declaration-maps are present, one will get meaningful source code locations in errors, and VSCode will navigate seamless between the consuming application and the linked module's sources.
+> While developing a library, best practice is to bundle it up locally in `debug` mode, and link this local package to your application with `npm`. Since in `debug` mode both sourcemaps and declaration-maps are present, one will get meaningful source code locations in errors, and VSCode will navigate seamless between the consuming application and the linked module's sources.
 >
 > _**SEE:** [`npm-link`](https://docs.npmjs.com/cli/v7/commands/npm-link "Visit") for further reference._
 
@@ -119,23 +119,23 @@ Binaries can be standalone Node.js applications, or accompanying tools for your 
   - Either a single string input location (in this case the binary will use your project's name from `package.json`)
   - Or an object that's keys are the names of the binaries, and their values are the input locations
 
-> _It is a good idea to package a `man` page with standalone applications. You can check out this project's setup in [`package.json`](https://github.com/theonethread/falkor-bundler/blob/master/package.json "Open") and [`man.md`](https://github.com/theonethread/falkor-bundler/blob/master/man.md "Open") for details._
+> _It is a good idea to package a `man` page with standalone applications. You can check out this project's setup in [`package.json`](https://github.com/theonethread/falkor-bundler/blob/master/package.json "Open") and [`man.md`](https://github.com/theonethread/falkor-bundler/blob/master/man/man.md "Open") for details._
 
 ### **Required Shared Module Structure**
 
-It is possible to internally share modules between binaries and your library, in this case the shared module will not get compiled into both your projects' output, but it will have to be compiled separately. For internally shared modules `package.json` **must**:
+It is possible to internally share modules between binaries and your library, in this case the shared module will not get compiled into both your projects' artifacts, but it will have to be handled separately. For internally shared modules `package.json` **must**:
 
 - Have a `shared` entry that is:
   - Either a single string input location
   - Or an array of string input locations
 
-It is advised not to over-complicate these setups, one should consider the whole dependency tree of all projects when doing so.
-
+> _It is advised not to over-complicate these setups, one should consider the whole dependency tree of all projects when doing so._
+>
 > _For a complex setup using this technique you can check out the `falkor-auth-server` project on [GitHub](https://github.com/theonethread/falkor-auth-server "Visit")._
 
 ### **TypeScript Configuration**
 
-The project needs a valid `tsconfig.json` in the root directory, but all compiler options will be overridden by the internal mechanism, so this file is merely used as linter settings by VSCode.
+The project needs a valid `tsconfig.json` in the root directory, but all compiler options will be overridden by the internal mechanism, so this file is merely used as linter settings by your IDE.
 
 ## **Further Development**
 
@@ -173,17 +173,17 @@ $ npm run lint
 > _**SEE:** [`.prettierrc`](https://github.com/theonethread/falkor-bundler/blob/develop/.prettierrc "Open") and [`.cspell.json`](https://github.com/theonethread/falkor-bundler/blob/develop/.cspell.json "Open") for further reference._
 
 - To fix formatting issues run `$ npx prettier --write <path-to-file>`. This will overwrite the file with the default formatting applied locally, so then you can review the changes in `git` and **ensure those did not affect production artifacts**.
-- To fix spelling errors run `$ npx cspell lint --wordsOnly --unique --gitignore --exclude .git ** .*` for details, and either add `cspell` favored comments to the sources listed, or extend project-wide `.cspell.json` accordingly.
+- To fix spelling errors run `$ npx cspell lint --wordsOnly --unique --gitignore --exclude .git ** .*` for details, and either make the fixes in the sources listed, add `cspell` favored comments, or extend the project-wide `.cspell.json` accordingly.
 
 ### **Versioning and Branching Strategy**
 
-Release sources can be found on the `master` branch, this one always points to the latest tagged release. Previous sources of releases can be found using Git version tags (or browsing GitHub releases). Released packages can be found on [npmjs](https://www.npmjs.com/package/@falkor/falkor-bundler "Visit").
+Release sources can be found on the `master` branch, this one always points to the latest tagged release. Previous sources of releases can be found using `git` version tags (or browsing GitHub releases). Released packages can be found on [npmjs](https://www.npmjs.com/package/@falkor/falkor-bundler "Visit").
 
 The repository's main branch is `develop` (due to technical reasons), this holds all developments that are already decided to be included in the next release. Usually this branch is ahead of `master` one patch version (but based on upcoming features to include this can become minor, or major), so prepared external links may yet be broken.
 
 The `feature/*` branches usually hold ideas and POC code, these will only be merged into `develop` once their impact measured and quality meets release requirements.
 
-> _The project uses [SemVer](https://semver.org "Visit"), Git tags are prefixed with a `v` character._
+> _The project uses [SemVer](https://semver.org "Visit"), `git` tags are prefixed with a `v` character._
 
 ### **GitHub Actions**
 
