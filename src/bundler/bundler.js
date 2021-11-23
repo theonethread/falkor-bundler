@@ -111,14 +111,14 @@ export default async (cliConfig, packageConfig, tempTypesDir, logger) => {
             logger.printLog("creating typings bundle");
 
             const typingsOutputOptions = {
-                file: `${cliConfig.outDir}/${inputName}.d.ts`,
+                file: `${cliConfig.outDir}/${cliConfig.inputName}.d.ts`,
                 sourcemap: false,
                 format: "es"
             };
 
             // NOTE: in release mode the typings by tsc get written to a temporary folder '${tempTypesDir}' before flattening them to output directory
             const typingsBundle = await rollup({
-                input: `${cliConfig.outDir}/${tempTypesDir}/${inputName}.d.ts`,
+                input: `${cliConfig.outDir}/${tempTypesDir}/${cliConfig.inputName}.d.ts`,
                 plugins: [externals(externalsOptions), dts()]
             });
 

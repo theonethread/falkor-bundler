@@ -5,6 +5,7 @@ import minimist from "minimist";
 const cliConfig = {
     input: "src/index.ts",
     inputDir: "src",
+    inputName: "index",
     outDir: ".dist",
     jsMode: false,
     bundleMode: "release",

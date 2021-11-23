@@ -30,12 +30,12 @@ export default (cliConfig, logger) => {
         logger.printError("'type' in package.json is not 'module'");
         throw 1;
     }
-    if (pkg.module && pkg.module === `${cliConfig.outDir}/${inputName}.js`) {
-        if (pkg.main !== `${cliConfig.outDir}/${inputName}.js`) {
+    if (pkg.module && pkg.module === `${cliConfig.outDir}/${cliConfig.inputName}.js`) {
+        if (pkg.main !== `${cliConfig.outDir}/${cliConfig.inputName}.js`) {
             logger.printError(`'main' in package.json is not the same as 'module'`);
             process.exit(1);
         }
-        if (pkg.typings !== `${cliConfig.outDir}/${inputName}.d.ts`) {
+        if (pkg.typings !== `${cliConfig.outDir}/${cliConfig.inputName}.d.ts`) {
             logger.printError(`'typings' in package.json is not named after 'module'`);
             throw 1;
         }
@@ -74,8 +74,8 @@ export default (cliConfig, logger) => {
             sharedModules = pkg.shared;
         }
         sharedModules.forEach((sharedPath) => {
-            if (sharedPath === `${cliConfig.outDir}/${inputName}.js`) {
-                packageConfig.moduleName = inputName;
+            if (sharedPath === `${cliConfig.outDir}/${cliConfig.inputName}.js`) {
+                packageConfig.moduleName = cliConfig.inputName;
                 packageConfig.sharedMode = true;
                 packageConfig.buildModes.push("shared");
             } else {
