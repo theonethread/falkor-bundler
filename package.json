@@ -1,6 +1,6 @@
 {
   "name": "@falkor/falkor-bundler",
-  "version": "1.1.8",
+  "version": "1.1.9",
   "description": "ES6 JavaScript / TypeScript bundler to be used with the Falkor Framework",
   "author": {
     "name": "Barnabas Bucsy",
@@ -68,20 +68,20 @@
     "prepublishOnly": "npm ci && npm run lint && npm run release && npm run man"
   },
   "devDependencies": {
-    "@types/node": "14.17.32",
+    "@types/node": "14.17.34",
     "@types/minimist": "1.2.2",
     "@types/shelljs": "0.8.9",
     "rimraf": "3.0.2",
     "prettier": "2.4.1",
-    "cspell": "5.12.6"
+    "cspell": "5.13.0"
   },
   "dependencies": {
     "minimist": "1.2.5",
     "shelljs": "0.8.4",
     "strip-json-comments": "4.0.0",
-    "typescript": "4.4.4",
+    "typescript": "4.5.2",
     "tslib": "2.3.1",
-    "rollup": "2.60.0",
+    "rollup": "2.60.1",
     "builtin-modules": "3.2.0",
     "rollup-plugin-node-externals": "2.2.0",
     "@rollup/plugin-typescript": "8.3.0",
