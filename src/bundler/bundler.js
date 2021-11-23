@@ -1,5 +1,7 @@
+import shell from "shelljs";
+
 /** @throws 1 */
-export default async (cliConfig, packageConfig, tempTypesDir, logger) => {
+export default async (cliConfig, packageConfig, tsConfig, tempTypesDir, logger) => {
     logger.printTask(
         `bundling ${packageConfig.buildModes.join(" & ")} '${packageConfig.packageName}${
             packageConfig.moduleName && packageConfig.packageName !== packageConfig.moduleName
@@ -34,7 +36,7 @@ export default async (cliConfig, packageConfig, tempTypesDir, logger) => {
         exclude: packageConfig.excludedBinaries,
         // tsc compiler options override
         outDir: cliConfig.outDir,
-        target: packageConfig.target,
+        target: tsConfig.target,
         rootDir: cliConfig.inputDir,
         allowJs: cliConfig.jsMode,
         declaration: packageConfig.libraryMode,

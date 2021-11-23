@@ -52,7 +52,7 @@ try {
         `build context: ${JSON.stringify(cliConfig.compilationContext, null, 2).replace(/\n/g, "\n      ")}`
     );
 
-    await bundler(cliConfig, packageConfig, tempTypesDir, logger);
+    await bundler(cliConfig, packageConfig, tsConfig, tempTypesDir, logger);
 } catch (code) {
     if (typeof code !== "number") {
         console.error(code);
