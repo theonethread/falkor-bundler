@@ -4,6 +4,9 @@ on:
   workflow_dispatch:
   schedule:
     - cron: "40 3 * * *" # 3:40am UTC
+  pull_request:
+    branches:
+      - develop
 
 jobs:
   CId:
@@ -28,6 +31,10 @@ jobs:
       - name: Install Npm Dependencies
         run: |-
           npm ci --ignore-scripts
+
+      - name: Lint Project
+        run: |-
+          npm run lint
 
       - name: Bundle Project
         run: |-
