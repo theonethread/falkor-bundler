@@ -37,9 +37,10 @@ jobs:
       # - name: Install Npm Peer Dependencies (for npm v6)
       #   if: ${{ matrix.node-version == '14.x' }}
       #   run: |-
-      #     npm install ... --no-save
+      #     npm install <package-names> --no-save
 
       # - name: List Packages Installed
+      #   continue-on-error: true
       #   run: |-
       #     npm ls --all
 
