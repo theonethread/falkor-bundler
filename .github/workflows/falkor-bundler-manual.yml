@@ -13,6 +13,7 @@ jobs:
     name: Manual CI Suite
 
     strategy:
+      fail-fast: false
       matrix:
         node-version: [14.x, 16.x]
         os: [ubuntu-latest, windows-latest, macOS-latest]
