@@ -13,6 +13,7 @@ jobs:
     name: Manual CI Suite
 
     strategy:
+      fail-fast: false
       matrix:
         node-version: [14.x, 16.x]
         os: [ubuntu-latest, windows-latest, macOS-latest]
@@ -32,6 +33,16 @@ jobs:
       - name: Install Npm Dependencies
         run: |-
           npm ci --ignore-scripts
+
+      # - name: Install Npm Peer Dependencies (for npm v6)
+      #   if: ${{ matrix.node-version == '14.x' }}
+      #   run: |-
+      #     npm install <package-names> --no-save
+
+      # - name: List Packages Installed
+      #   continue-on-error: true
+      #   run: |-
+      #     npm ls --all
 
       - name: Lint Project
         run: |-
