@@ -1,6 +1,6 @@
 {
   "name": "@falkor/falkor-bundler",
-  "version": "1.1.11",
+  "version": "1.1.12",
   "description": "ES6 JavaScript / TypeScript bundler to be used with the Falkor Framework",
   "author": {
     "name": "Barnabas Bucsy",
