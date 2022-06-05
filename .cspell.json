@@ -15,6 +15,7 @@
     "snyk",
     "prettierrc",
     "loglevel",
-    "parens"
+    "parens",
+    "sourcemaps"
   ]
 }
