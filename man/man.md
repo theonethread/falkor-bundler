@@ -1,4 +1,4 @@
-% FALKOR-BUNDLER(1) The Falkor Framework **1.0.0** | **Falkor** General Commands Manual % Barnabas Bucsy % October 2021
+% FALKOR-BUNDLER(1) The Falkor Framework **1.0.0** | **Falkor** General Commands Manual % Barnabas Bucsy % June 2022
 
 # NAME
 
@@ -65,4 +65,4 @@ If for some reason the `#` character is reserved in your workflow, it can be sub
 
 # COPYRIGHT
 
-(C)2020-2021 Barnabas Bucsy - All rights reserved.
+(C)2020-2022 Barnabas Bucsy - All rights reserved.
