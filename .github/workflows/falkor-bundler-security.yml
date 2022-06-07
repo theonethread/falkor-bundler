@@ -24,7 +24,7 @@ jobs:
       - name: GitHub Checkout
         uses: actions/checkout@v2
 
-      - name: Analyse Project Dependencies
+      - name: Analyze Project Dependencies
         uses: snyk/actions/node@master
         env:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
@@ -34,5 +34,5 @@ jobs:
         with:
           languages: javascript
 
-      - name: Analyse Project Sources
+      - name: Analyze Project Sources
         uses: github/codeql-action/analyze@v1
