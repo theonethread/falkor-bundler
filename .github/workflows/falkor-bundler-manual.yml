@@ -15,7 +15,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        node-version: [14.x, 16.x]
+        node-version: [16.x, 18.x]
         os: [ubuntu-latest, windows-latest, macOS-latest]
 
     runs-on: ${{ matrix.os }}
@@ -52,11 +52,11 @@ jobs:
         run: |-
           node src/index.js ${{ github.event.inputs.cli }} --input src/index.js
 
-      - name: Use Pandoc v2.16.1
+      - name: Use Pandoc v2.18
         if: ${{ matrix.os != 'windows-latest' }}
         uses: r-lib/actions/setup-pandoc@v1
         with:
-          pandoc-version: "2.16.1"
+          pandoc-version: "2.18"
 
       - name: Build Manual
         if: ${{ matrix.os != 'windows-latest' }}

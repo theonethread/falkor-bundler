@@ -26,7 +26,7 @@ Include the `@falkor/falkor-bundler` in the `package.json` file under `devDepend
 ...
   "devDependencies": {
     ...
-    "@falkor/falkor-bundler": "1.1.14"
+    "@falkor/falkor-bundler": "1.2.0"
   }
 ```
 
@@ -211,4 +211,4 @@ We believe - and we hope you do too - that learning how to code, how to think, a
 
 [MIT](https://github.com/theonethread/falkor-bundler/blob/master/license.txt "Open")
 
-_©2020-2021 Barnabas Bucsy - All rights reserved._
+_©2020-2022 Barnabas Bucsy - All rights reserved._
