@@ -68,11 +68,11 @@
     "prepublishOnly": "npm ci --ignore-scripts && npm run lint && npm run release && npm run man"
   },
   "devDependencies": {
-    "@types/node": "17.0.42",
+    "@types/node": "17.0.43",
     "@types/minimist": "1.2.2",
     "@types/shelljs": "0.8.11",
     "rimraf": "3.0.2",
-    "prettier": "2.6.2",
+    "prettier": "2.7.0",
     "cspell": "6.1.2"
   },
   "dependencies": {
