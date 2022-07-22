@@ -73,12 +73,12 @@
     "@types/shelljs": "0.8.11",
     "rimraf": "3.0.2",
     "prettier": "2.7.1",
-    "cspell": "6.3.0"
+    "cspell": "6.4.0"
   },
   "dependencies": {
     "minimist": "1.2.6",
     "shelljs": "0.8.5",
-    "strip-json-comments": "4.0.0",
+    "strip-json-comments": "5.0.0",
     "typescript": "4.7.4",
     "tslib": "2.4.0",
     "rollup": "2.77.0",
