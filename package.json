@@ -68,7 +68,7 @@
     "prepublishOnly": "npm ci --ignore-scripts && npm run lint && npm run release && npm run man"
   },
   "devDependencies": {
-    "@types/node": "18.7.13",
+    "@types/node": "18.7.15",
     "@types/minimist": "1.2.2",
     "@types/shelljs": "0.8.11",
     "rimraf": "3.0.2",
@@ -81,10 +81,10 @@
     "strip-json-comments": "5.0.0",
     "typescript": "4.8.2",
     "tslib": "2.4.0",
-    "rollup": "2.78.1",
+    "rollup": "2.79.0",
     "builtin-modules": "3.3.0",
-    "rollup-plugin-node-externals": "4.1.1",
-    "@rollup/plugin-typescript": "8.4.0",
+    "rollup-plugin-node-externals": "5.0.0",
+    "@rollup/plugin-typescript": "8.5.0",
     "rollup-plugin-jscc": "2.0.0",
     "rollup-plugin-terser": "7.0.2",
     "terser": "5.15.0",
