@@ -16,7 +16,7 @@ export default async (cliConfig, packageConfig, tsConfig, tempTypesDir, logger) 
         import("rollup-plugin-node-externals").then((m) => m.default),
         import("rollup-plugin-jscc").then((m) => m.default),
         import("@rollup/plugin-typescript").then((m) => m.default),
-        import("rollup-plugin-terser").then((m) => m.terser),
+        import("@rollup/plugin-terser").then((m) => m.default),
         import("rollup-plugin-dts").then((m) => m.default),
         !cliConfig.jsMode && cliConfig.sharedExternals.length
             ? import("@betit/rollup-plugin-rename-extensions").then((m) => m.default.default) // TODO: weird...
