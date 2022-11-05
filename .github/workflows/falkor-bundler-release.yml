@@ -32,7 +32,7 @@ jobs:
 
       - name: Install Npm Dependencies
         run: |-
-          npm ci --ignore-scripts
+          npm clean-install --ignore-scripts
 
       # - name: Install Npm Peer Dependencies (for npm v6)
       #   if: ${{ matrix.node-version == '14.x' }}
