@@ -1,0 +1,27 @@
+{
+  // workspace scoped settings, only as reminder
+  "explorer.autoReveal": false,
+  "files.associations": {
+    ".prettierrc": "yaml"
+  },
+  "terminal.integrated.cursorStyle": "underline",
+  "terminal.integrated.cursorBlinking": true,
+  "workbench.tree.indent": 20,
+  "workbench.colorCustomizations": {
+    "terminal.foreground": "#16C60C"
+  },
+  // folder scoped settings
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+  "editor.tabSize": 4,
+  "editor.insertSpaces": true,
+  "files.trimTrailingWhitespace": true,
+  "files.insertFinalNewline": true,
+  "search.exclude": {
+    "**/node_modules": true,
+    ".dist": true,
+    ".tmp": true,
+    ".man": true
+  },
+  "typescript.updateImportsOnFileMove.enabled": "always"
+}
