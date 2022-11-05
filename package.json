@@ -60,6 +60,7 @@
     "node": ">=16",
     "npm": ">=8"
   },
+  "engineStrict": true,
   "scripts": {
     "debug": "rimraf .dist/**/* && node src/index.js --debug --input src/index.js",
     "release": "rimraf .dist/**/* && node src/index.js --release --input src/index.js",
