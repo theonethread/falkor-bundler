@@ -1,5 +1,5 @@
 {
-  // workspace scoped settings, only as reminder
+  // workspace scoped settings, will aply when saving workspace
   "explorer.autoReveal": false,
   "files.associations": {
     ".prettierrc": "yaml"
