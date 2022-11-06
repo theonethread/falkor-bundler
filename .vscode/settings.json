@@ -1,6 +1,7 @@
 {
   // workspace scoped settings, will aply when saving workspace
   "explorer.autoReveal": false,
+  "explorer.compactFolders": false,
   "files.associations": {
     ".prettierrc": "yaml"
   },
