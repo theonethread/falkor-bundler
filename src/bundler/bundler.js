@@ -51,6 +51,7 @@ export default async (cliConfig, packageConfig, tsConfig, tempTypesDir, logger) 
         removeComments: false,
         esModuleInterop: true,
         allowSyntheticDefaultImports: true,
+        resolveJsonModule: true,
         forceConsistentCasingInFileNames: true,
         noImplicitReturns: true,
         noImplicitAny: true,
