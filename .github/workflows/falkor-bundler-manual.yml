@@ -32,17 +32,7 @@ jobs:
 
       - name: Install Npm Dependencies
         run: |-
-          npm clean-install --ignore-scripts
-
-      # - name: Install Npm Peer Dependencies (for npm v6)
-      #   if: ${{ matrix.node-version == '14.x' }}
-      #   run: |-
-      #     npm install <package-names> --no-save
-
-      # - name: List Packages Installed
-      #   continue-on-error: true
-      #   run: |-
-      #     npm ls --all
+          npm clean-install --ignore-scripts --fund false
 
       - name: Lint Project
         run: |-
@@ -65,7 +55,7 @@ jobs:
 
       - name: Install Project Globally
         run: |-
-          npm install --global .
+          npm install --global --fund false .
 
       - name: Get Executable Version
         run: |-

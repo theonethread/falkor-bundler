@@ -32,12 +32,7 @@ jobs:
 
       - name: Install Npm Dependencies
         run: |-
-          npm clean-install --ignore-scripts
-
-      # - name: Install Npm Peer Dependencies (for npm v6)
-      #   if: ${{ matrix.node-version == '14.x' }}
-      #   run: |-
-      #     npm install <package-names> --no-save
+          npm clean-install --ignore-scripts --fund false
 
       - name: Lint Project
         run: |-
