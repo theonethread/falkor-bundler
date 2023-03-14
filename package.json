@@ -62,34 +62,34 @@
   },
   "engineStrict": true,
   "scripts": {
-    "debug": "rimraf .dist/**/* && node src/index.js --debug --input src/index.js",
-    "release": "rimraf .dist/**/* && node src/index.js --release --input src/index.js",
+    "debug": "rimraf .dist && node src/index.js --debug --input src/index.js",
+    "release": "rimraf .dist && node src/index.js --release --input src/index.js",
     "lint": "prettier --check . && cspell lint --no-progress --wordsOnly --unique --gitignore --exclude .git ** .*",
-    "man": "pandoc --version && (mkdir .man || rimraf .man/**/*) && pandoc --standalone --to man ./man/man.md --output ./.man/falkor-bundler.1",
+    "man": "pandoc --version && (mkdir .man || rimraf .man) && pandoc --standalone --to man ./man/man.md --output ./.man/falkor-bundler.1",
     "prepublishOnly": "npm clean-install --ignore-scripts --fund false && npm run lint && npm run release && npm run man"
   },
   "devDependencies": {
-    "@types/node": "18.11.9",
+    "@types/node": "18.15.3",
     "@types/minimist": "1.2.2",
     "@types/shelljs": "0.8.11",
-    "rimraf": "3.0.2",
-    "prettier": "2.7.1",
-    "cspell": "6.14.2"
+    "rimraf": "4.4.0",
+    "prettier": "2.8.4",
+    "cspell": "6.29.3"
   },
   "dependencies": {
-    "minimist": "1.2.7",
+    "minimist": "1.2.8",
     "shelljs": "0.8.5",
     "strip-json-comments": "5.0.0",
-    "typescript": "4.8.4",
-    "tslib": "2.4.1",
-    "rollup": "3.3.0",
+    "typescript": "4.9.5",
+    "tslib": "2.5.0",
+    "rollup": "3.19.1",
     "builtin-modules": "3.3.0",
-    "rollup-plugin-node-externals": "5.0.2",
-    "@rollup/plugin-typescript": "9.0.2",
+    "rollup-plugin-node-externals": "5.1.2",
+    "@rollup/plugin-typescript": "11.0.0",
     "rollup-plugin-jscc": "2.0.0",
-    "@rollup/plugin-terser": "0.1.0",
-    "terser": "5.15.1",
-    "rollup-plugin-dts": "5.0.0",
+    "@rollup/plugin-terser": "0.4.0",
+    "terser": "5.16.6",
+    "rollup-plugin-dts": "5.2.0",
     "@betit/rollup-plugin-rename-extensions": "0.1.0"
   }
 }
