@@ -32,7 +32,7 @@ jobs:
 
       - name: Install Npm Dependencies
         run: |-
-          npm clean-install --ignore-scripts --fund false
+          npm install --ignore-scripts --fund false
 
       - name: Lint Project
         run: |-
@@ -42,11 +42,11 @@ jobs:
         run: |-
           node src/index.js ${{ github.event.inputs.cli }} --input src/index.js
 
-      - name: Use Pandoc v2.18
+      - name: Use Pandoc v3.1
         if: ${{ matrix.os != 'windows-latest' }}
         uses: r-lib/actions/setup-pandoc@v1
         with:
-          pandoc-version: "2.18"
+          pandoc-version: "3.1"
 
       - name: Build Manual
         if: ${{ matrix.os != 'windows-latest' }}

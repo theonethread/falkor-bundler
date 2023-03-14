@@ -30,7 +30,7 @@ jobs:
 
       - name: Install Npm Dependencies
         run: |-
-          npm clean-install --ignore-scripts --fund false
+          npm install --ignore-scripts --fund false
 
       - name: Lint Project
         run: |-
@@ -40,10 +40,10 @@ jobs:
         run: |-
           npm run release
 
-      - name: Use Pandoc v2.18
+      - name: Use Pandoc v3.1
         uses: r-lib/actions/setup-pandoc@v1
         with:
-          pandoc-version: "2.18"
+          pandoc-version: "3.1"
 
       - name: Build Manual
         run: |-
