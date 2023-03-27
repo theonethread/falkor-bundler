@@ -1,5 +1,6 @@
+//spell-checker:ignore esbenp
 {
-  // workspace scoped settings, will aply when saving workspace
+  // workspace scoped settings, will apply when saving workspace
   "explorer.autoReveal": false,
   "explorer.compactFolders": false,
   "files.associations": {
