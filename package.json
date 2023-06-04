@@ -73,8 +73,8 @@
     "@types/minimist": "1.2.2",
     "@types/shelljs": "0.8.12",
     "rimraf": "5.0.1",
-    "prettier": "2.8.8",
-    "cspell": "6.31.1"
+    "@falkor/falkor-cspell-config": "0.0.1",
+    "@falkor/falkor-prettier-config": "0.0.1"
   },
   "dependencies": {
     "minimist": "1.2.8",
