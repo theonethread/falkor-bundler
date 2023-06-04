@@ -15,7 +15,7 @@ export default (fileUrl, short = false) => {
     console.log(`
 [Falkor Bundler]
 version ${getOwnVersion(fileUrl)}
-(C)2020-2022 Barnabas Bucsy - All rights reserved.
+(C)2020-2023 Barnabas Bucsy - All rights reserved.
 
 Opinionated ES6 JavaScript / TypeScript module bundler - part of the Falkor Framework
 

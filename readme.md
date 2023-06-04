@@ -211,4 +211,4 @@ We believe - and we hope you do too - that learning how to code, how to think, a
 
 [MIT](https://github.com/theonethread/falkor-bundler/blob/master/license.txt "Open")
 
-_©2020-2022 Barnabas Bucsy - All rights reserved._
+_©2020-2023 Barnabas Bucsy - All rights reserved._

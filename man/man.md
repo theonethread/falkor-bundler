@@ -1,4 +1,4 @@
-% FALKOR-BUNDLER(1) The Falkor Framework **1.0.0** | **Falkor** General Commands Manual % Barnabas Bucsy % June 2022
+% FALKOR-BUNDLER(1) The Falkor Framework **1.0.0** | **Falkor** General Commands Manual % Barnabas Bucsy % June 2023
 
 # NAME
 
@@ -30,31 +30,31 @@ The project aims to abstract away distinct build setting difficulties from devel
 
 # OPTIONS
 
-`-v`, `--version`  
+`-v`, `--version`
 : Show version and exit
 
-`-h`, `--help`  
+`-h`, `--help`
 : Show help and exit
 
-`-r`, `--release`  
+`-r`, `--release`
 : Bundle in **release** mode, only used for readability (default)
 
-`-d`, `--debug`  
+`-d`, `--debug`
 : Bundle in **debug** mode
 
-`-s`, `--silent`  
+`-s`, `--silent`
 : Do not print messages
 
-`-i <file>`, `--input <file>`  
+`-i <file>`, `--input <file>`
 : Entry **.ts** or **.js** file (default: **src/index.ts**)
 
-`-o <dir>`, `--out <dir>`  
+`-o <dir>`, `--out <dir>`
 : Output directory of bundle (default: **.dist**)
 
-`-c <ctx>`, `--context <ctx>`  
+`-c <ctx>`, `--context <ctx>`
 : JSCC compilation context (see below)
 
-`-- <externals>...`  
+`-- <externals>...`
 : Treat all positional arguments after double dash as externals
 
 # JSCC CONTEXT
@@ -65,4 +65,4 @@ If for some reason the `#` character is reserved in your workflow, it can be sub
 
 # COPYRIGHT
 
-(C)2020-2022 Barnabas Bucsy - All rights reserved.
+(C)2020-2023 Barnabas Bucsy - All rights reserved.
