@@ -170,10 +170,10 @@ The project uses [`prettier`](https://www.npmjs.com/package/prettier "Visit") fo
 $ npm run lint
 ```
 
-> _**SEE:** [`.prettierrc`](https://github.com/theonethread/falkor-bundler/blob/develop/.prettierrc "Open") and [`.cspell.json`](https://github.com/theonethread/falkor-bundler/blob/develop/.cspell.json "Open") for further reference._
+> _**SEE:** [`.prettierrc.cjs`](https://github.com/theonethread/falkor-bundler/blob/develop/.prettierrc.cjs "Open") and [`cspell.config.cjs`](https://github.com/theonethread/falkor-bundler/blob/develop/cspell.config.cjs "Open") for further reference._
 
 - To fix formatting issues run `$ npx prettier --write <path-to-file>`. This will overwrite the file with the default formatting applied locally, so then you can review the changes in `git` and **ensure those did not affect production artifacts**.
-- To fix spelling errors run `$ npx cspell lint --wordsOnly --unique --gitignore --exclude .git ** .*` for details, and either make the fixes in the sources listed, add `cspell` favored comments, or extend the project-wide `.cspell.json` accordingly.
+- To fix spelling errors run `$ npx cspell lint --wordsOnly --unique --gitignore --exclude .git ** .*` for details, and either make the fixes in the sources listed, add `cspell` favored comments, or extend the project-wide `cspell.config.cjs` accordingly.
 
 ### **Versioning and Branching Strategy**
 
