@@ -27,8 +27,12 @@ export default (cliConfig, logger) => {
     packageConfig.version = pkg.version;
     packageConfig.packageName = pkg.name;
     if (pkg.type !== "module") {
-        logger.printError("'type' in package.json is not 'module'");
-        throw 1;
+        if (pkg.type === "commonjs") {
+            logger.printWarning("'type' in package.json is 'commonjs'");
+        } else {
+            logger.printError("'type' in package.json is not 'module'");
+            throw 1;
+        }
     }
     if (pkg.module && pkg.module === `${cliConfig.outDir}/${cliConfig.inputName}.js`) {
         if (pkg.main !== `${cliConfig.outDir}/${cliConfig.inputName}.js`) {

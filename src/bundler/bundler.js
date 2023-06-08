@@ -36,7 +36,7 @@ export default async (cliConfig, packageConfig, tsConfig, tempTypesDir, logger) 
         exclude: packageConfig.excludedBinaries,
         // tsc compiler options override
         outDir: cliConfig.outDir,
-        target: tsConfig.target,
+        target: tsConfig.target || "ESNext",
         rootDir: cliConfig.inputDir,
         allowJs: cliConfig.jsMode,
         declaration: packageConfig.libraryMode,
@@ -46,7 +46,7 @@ export default async (cliConfig, packageConfig, tsConfig, tempTypesDir, logger) 
         declarationMap: packageConfig.libraryMode && cliConfig.compilationContext._DEBUG,
         preserveConstEnums: cliConfig.compilationContext._DEBUG,
         sourceMap: cliConfig.compilationContext._DEBUG,
-        module: "ESNext",
+        module: tsConfig.module || "ESNext",
         alwaysStrict: true,
         removeComments: false,
         esModuleInterop: true,
@@ -69,7 +69,7 @@ export default async (cliConfig, packageConfig, tsConfig, tempTypesDir, logger) 
 
     const outputOptions = {
         dir: cliConfig.outDir,
-        format: "es",
+        format: tsConfig.module?.toLowerCase() === "commonjs" ? "cjs" : "es",
         sourcemap: cliConfig.compilationContext._DEBUG,
         sourcemapExcludeSources: true,
         banner: packageConfig.binaryMode ? "#!/usr/bin/env node" : undefined
